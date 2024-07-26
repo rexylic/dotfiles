@@ -62,7 +62,7 @@ now(function() -- vim
   o.foldmethod = 'expr'
   o.formatoptions = 'roqlj'
   o.hidden = false
-  o.hlsearch = true
+  o.hlsearch = false
   o.ignorecase = true
   o.inccommand = 'split'
   o.number = true
@@ -74,6 +74,16 @@ now(function() -- vim
   o.smartindent = true
   o.smarttab = true
   o.termguicolors = true
+end)
+
+now(function() -- neovide
+  if vim.g.neovide then
+    vim.opt.guifont = "Pragmata Nerd Font:h16"
+    vim.g.neovide_padding_top = 12
+    vim.g.neovide_padding_right = 12
+    vim.g.neovide_padding_bottom = 12
+    vim.g.neovide_padding_left= 12
+  end
 end)
 
 later(function() -- load plugins later
@@ -269,6 +279,7 @@ end)
 
 later(function() -- language server protocol (LSP)
   local lc = require('lspconfig')
+  lc.html.setup {}
   lc.rust_analyzer.setup {}
   lc.sourcekit.setup {}
   lc.texlab.setup {}
