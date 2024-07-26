@@ -1,5 +1,5 @@
 local g = vim.g
-g.mapleader = " "
+g.mapleader = ","
 g.maplocalleader = "\\"
 g.vimtex_view_method = 'skim'
 g.vimtex_quickfix_ignore_filters = { 'Overfull' }
@@ -90,32 +90,32 @@ later(function() -- load plugins later
         mc.gen_clues.registers(),
         mc.gen_clues.windows(),
         mc.gen_clues.z(),
-        -- Leader secondary groups
-        { mode = 'n', keys = '<Leader>p', desc = '+Pick' },
-        -- VimTex
+        -- Secondary groups
+        { mode = 'n', keys = '<Leader><Space>', desc = '+Pick' },
         { mode = 'n', keys = '<LocalLeader>l', desc = '+VimTex' },
-        { mode = 'n', keys = '<LocalLeader>li', desc = 'Info' },
-        { mode = 'n', keys = '<LocalLeader>lI', desc = 'Full info' },
-        { mode = 'n', keys = '<LocalLeader>lt', desc = 'Open ToC' },
-        { mode = 'n', keys = '<LocalLeader>lT', desc = 'Toggle ToC' },
-        { mode = 'n', keys = '<LocalLeader>lq', desc = 'Log' },
-        { mode = 'n', keys = '<LocalLeader>lv', desc = 'View' },
-        { mode = 'n', keys = '<LocalLeader>lr', desc = 'Reverse search' },
-        { mode = 'n', keys = '<LocalLeader>ll', desc = 'Compile' },
-        { mode = 'x', keys = '<LocalLeader>lL', desc = 'Compile selected' },
-        { mode = 'n', keys = '<LocalLeader>lk', desc = 'Stop' },
-        { mode = 'n', keys = '<LocalLeader>lK', desc = 'Stop all' },
-        { mode = 'n', keys = '<LocalLeader>le', desc = 'Errors' },
-        { mode = 'n', keys = '<LocalLeader>lo', desc = 'Compile output' },
-        { mode = 'n', keys = '<LocalLeader>lg', desc = 'Status' },
-        { mode = 'n', keys = '<LocalLeader>lG', desc = 'All status' },
+        -- VimTex
+        { mode = 'n', keys = '<LocalLeader>la', desc = 'Context menu' },
         { mode = 'n', keys = '<LocalLeader>lc', desc = 'Clean' },
         { mode = 'n', keys = '<LocalLeader>lC', desc = 'Full clean' },
+        { mode = 'n', keys = '<LocalLeader>le', desc = 'Errors' },
+        { mode = 'n', keys = '<LocalLeader>lg', desc = 'Status' },
+        { mode = 'n', keys = '<LocalLeader>lG', desc = 'All status' },
+        { mode = 'n', keys = '<LocalLeader>li', desc = 'Info' },
+        { mode = 'n', keys = '<LocalLeader>lI', desc = 'Full info' },
+        { mode = 'n', keys = '<LocalLeader>lk', desc = 'Stop' },
+        { mode = 'n', keys = '<LocalLeader>lK', desc = 'Stop all' },
+        { mode = 'n', keys = '<LocalLeader>ll', desc = 'Compile' },
+        { mode = 'x', keys = '<LocalLeader>lL', desc = 'Compile selected' },
         { mode = 'n', keys = '<LocalLeader>lm', desc = 'List imaps' },
+        { mode = 'n', keys = '<LocalLeader>lo', desc = 'Compile output' },
+        { mode = 'n', keys = '<LocalLeader>lq', desc = 'Log' },
+        { mode = 'n', keys = '<LocalLeader>lr', desc = 'Reverse search' },
+        { mode = 'n', keys = '<LocalLeader>ls', desc = 'Toggle main' },
+        { mode = 'n', keys = '<LocalLeader>lt', desc = 'Open ToC' },
+        { mode = 'n', keys = '<LocalLeader>lT', desc = 'Toggle ToC' },
+        { mode = 'n', keys = '<LocalLeader>lv', desc = 'View' },
         { mode = 'n', keys = '<LocalLeader>lx', desc = 'Reload' },
         { mode = 'n', keys = '<LocalLeader>lX', desc = 'Reload state' },
-        { mode = 'n', keys = '<LocalLeader>ls', desc = 'Toggle main' },
-        { mode = 'n', keys = '<LocalLeader>la', desc = 'Context menu' },
       },
       triggers = {
         -- Leader
@@ -206,12 +206,12 @@ later(function() -- leader key mappings
   lc('S', 'w<CR>:source', 'Save and source')
   lc('t', 'tabnew', 'Open tab')
   lc('T', 'tabclose', 'Close tab')
-  lc('pb', 'Pick buffers', 'Buffers')
-  lc('pd', 'Pick diagnostic', 'Diagnostic')
-  lc('pf', 'Pick files', 'Files')
-  lc('ph', 'Pick help', 'Help')
-  lc('pm', 'Pick marks', 'Marks')
-  lc('pr', 'Pick registers', 'Registers')
+  lc('<Space>b', 'Pick buffers', 'Buffers')
+  lc('<Space>d', 'Pick diagnostic', 'Diagnostic')
+  lc('<Space>f', 'Pick files', 'Files')
+  lc('<Space>h', 'Pick help', 'Help')
+  lc('<Space>m', 'Pick marks', 'Marks')
+  lc('<Space>r', 'Pick registers', 'Registers')
   lk('v', '<C-w>t<CR><C-w>H', 'Split to vertical')
   lc('w', 'q', 'Quit')
 end)
