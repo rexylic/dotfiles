@@ -59,6 +59,7 @@ now(function() -- vim
   vim.cmd('syntax enable')
 
   local o = vim.opt
+  o.colorcolumn = '81,101,121'
   o.cursorline = true
   o.expandtab = true
   o.fillchars = "fold: "
@@ -72,9 +73,10 @@ now(function() -- vim
   o.ignorecase = true
   o.inccommand = 'split'
   o.number = true
+  o.relativenumber = true
   o.shiftwidth = 2
   o.showmode = false
-  o.signcolumn = 'number'
+  o.signcolumn = 'yes:2'
   o.softtabstop = 2
   o.smartindent = true
   o.smarttab = true
