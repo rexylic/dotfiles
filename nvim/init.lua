@@ -75,6 +75,8 @@ now(function() -- vim
   o.number = true
   o.relativenumber = true
   o.shiftwidth = 2
+  o.showbreak = '⎆ '
+  o.showcmd = true
   o.showmode = false
   o.signcolumn = 'yes:1'
   o.softtabstop = 2
@@ -114,53 +116,54 @@ later(function() -- load plugins later
 
         -- Secondary groups
         { mode = 'n', keys = '<Leader>p', desc = '+Pick' },
-        { mode = 'n', keys = '<LocalLeader>l', desc = '+VimTex' },
+        { mode = 'n', keys = '<Leader>l', desc = '+LSP' },
+        -- { mode = 'n', keys = '<LocalLeader>l', desc = '+VimTex' },
 
         -- VimTex
-        { mode = 'n', keys = '<LocalLeader>la', desc = 'Context menu' },
-        { mode = 'n', keys = '<LocalLeader>lc', desc = 'Clean' },
-        { mode = 'n', keys = '<LocalLeader>lC', desc = 'Full clean' },
-        { mode = 'n', keys = '<LocalLeader>le', desc = 'Errors' },
-        { mode = 'n', keys = '<LocalLeader>lg', desc = 'Status' },
-        { mode = 'n', keys = '<LocalLeader>lG', desc = 'All status' },
-        { mode = 'n', keys = '<LocalLeader>li', desc = 'Info' },
-        { mode = 'n', keys = '<LocalLeader>lI', desc = 'Full info' },
-        { mode = 'n', keys = '<LocalLeader>lk', desc = 'Stop' },
-        { mode = 'n', keys = '<LocalLeader>lK', desc = 'Stop all' },
-        { mode = 'n', keys = '<LocalLeader>ll', desc = 'Compile' },
-        { mode = 'n', keys = '<LocalLeader>lm', desc = 'List imaps' },
-        { mode = 'n', keys = '<LocalLeader>lo', desc = 'Compile output' },
-        { mode = 'n', keys = '<LocalLeader>lq', desc = 'Log' },
-        { mode = 'n', keys = '<LocalLeader>lr', desc = 'Reverse search' },
-        { mode = 'n', keys = '<LocalLeader>ls', desc = 'Toggle main' },
-        { mode = 'n', keys = '<LocalLeader>lt', desc = 'Open ToC' },
-        { mode = 'n', keys = '<LocalLeader>lT', desc = 'Toggle ToC' },
-        { mode = 'n', keys = '<LocalLeader>lv', desc = 'View' },
-        { mode = 'n', keys = '<LocalLeader>lx', desc = 'Reload' },
-        { mode = 'n', keys = '<LocalLeader>lX', desc = 'Reload state' },
-
-        { mode = 'x', keys = '<LocalLeader>la', desc = 'Context menu' },
-        { mode = 'x', keys = '<LocalLeader>lc', desc = 'Clean' },
-        { mode = 'x', keys = '<LocalLeader>lC', desc = 'Full clean' },
-        { mode = 'x', keys = '<LocalLeader>le', desc = 'Errors' },
-        { mode = 'x', keys = '<LocalLeader>lg', desc = 'Status' },
-        { mode = 'x', keys = '<LocalLeader>lG', desc = 'All status' },
-        { mode = 'x', keys = '<LocalLeader>li', desc = 'Info' },
-        { mode = 'x', keys = '<LocalLeader>lI', desc = 'Full info' },
-        { mode = 'x', keys = '<LocalLeader>lk', desc = 'Stop' },
-        { mode = 'x', keys = '<LocalLeader>lK', desc = 'Stop all' },
-        { mode = 'x', keys = '<LocalLeader>ll', desc = 'Compile' },
-        { mode = 'x', keys = '<LocalLeader>lL', desc = 'Compile selected' },
-        { mode = 'x', keys = '<LocalLeader>lm', desc = 'List imaps' },
-        { mode = 'x', keys = '<LocalLeader>lo', desc = 'Compile output' },
-        { mode = 'x', keys = '<LocalLeader>lq', desc = 'Log' },
-        { mode = 'x', keys = '<LocalLeader>lr', desc = 'Reverse search' },
-        { mode = 'x', keys = '<LocalLeader>ls', desc = 'Toggle main' },
-        { mode = 'x', keys = '<LocalLeader>lt', desc = 'Open ToC' },
-        { mode = 'x', keys = '<LocalLeader>lT', desc = 'Toggle ToC' },
-        { mode = 'x', keys = '<LocalLeader>lv', desc = 'View' },
-        { mode = 'x', keys = '<LocalLeader>lx', desc = 'Reload' },
-        { mode = 'x', keys = '<LocalLeader>lX', desc = 'Reload state' },
+        -- { mode = 'n', keys = '<LocalLeader>la', desc = 'Context menu' },
+        -- { mode = 'n', keys = '<LocalLeader>lc', desc = 'Clean' },
+        -- { mode = 'n', keys = '<LocalLeader>lC', desc = 'Full clean' },
+        -- { mode = 'n', keys = '<LocalLeader>le', desc = 'Errors' },
+        -- { mode = 'n', keys = '<LocalLeader>lg', desc = 'Status' },
+        -- { mode = 'n', keys = '<LocalLeader>lG', desc = 'All status' },
+        -- { mode = 'n', keys = '<LocalLeader>li', desc = 'Info' },
+        -- { mode = 'n', keys = '<LocalLeader>lI', desc = 'Full info' },
+        -- { mode = 'n', keys = '<LocalLeader>lk', desc = 'Stop' },
+        -- { mode = 'n', keys = '<LocalLeader>lK', desc = 'Stop all' },
+        -- { mode = 'n', keys = '<LocalLeader>ll', desc = 'Compile' },
+        -- { mode = 'n', keys = '<LocalLeader>lm', desc = 'List imaps' },
+        -- { mode = 'n', keys = '<LocalLeader>lo', desc = 'Compile output' },
+        -- { mode = 'n', keys = '<LocalLeader>lq', desc = 'Log' },
+        -- { mode = 'n', keys = '<LocalLeader>lr', desc = 'Reverse search' },
+        -- { mode = 'n', keys = '<LocalLeader>ls', desc = 'Toggle main' },
+        -- { mode = 'n', keys = '<LocalLeader>lt', desc = 'Open ToC' },
+        -- { mode = 'n', keys = '<LocalLeader>lT', desc = 'Toggle ToC' },
+        -- { mode = 'n', keys = '<LocalLeader>lv', desc = 'View' },
+        -- { mode = 'n', keys = '<LocalLeader>lx', desc = 'Reload' },
+        -- { mode = 'n', keys = '<LocalLeader>lX', desc = 'Reload state' },
+        --
+        -- { mode = 'x', keys = '<LocalLeader>la', desc = 'Context menu' },
+        -- { mode = 'x', keys = '<LocalLeader>lc', desc = 'Clean' },
+        -- { mode = 'x', keys = '<LocalLeader>lC', desc = 'Full clean' },
+        -- { mode = 'x', keys = '<LocalLeader>le', desc = 'Errors' },
+        -- { mode = 'x', keys = '<LocalLeader>lg', desc = 'Status' },
+        -- { mode = 'x', keys = '<LocalLeader>lG', desc = 'All status' },
+        -- { mode = 'x', keys = '<LocalLeader>li', desc = 'Info' },
+        -- { mode = 'x', keys = '<LocalLeader>lI', desc = 'Full info' },
+        -- { mode = 'x', keys = '<LocalLeader>lk', desc = 'Stop' },
+        -- { mode = 'x', keys = '<LocalLeader>lK', desc = 'Stop all' },
+        -- { mode = 'x', keys = '<LocalLeader>ll', desc = 'Compile' },
+        -- { mode = 'x', keys = '<LocalLeader>lL', desc = 'Compile selected' },
+        -- { mode = 'x', keys = '<LocalLeader>lm', desc = 'List imaps' },
+        -- { mode = 'x', keys = '<LocalLeader>lo', desc = 'Compile output' },
+        -- { mode = 'x', keys = '<LocalLeader>lq', desc = 'Log' },
+        -- { mode = 'x', keys = '<LocalLeader>lr', desc = 'Reverse search' },
+        -- { mode = 'x', keys = '<LocalLeader>ls', desc = 'Toggle main' },
+        -- { mode = 'x', keys = '<LocalLeader>lt', desc = 'Open ToC' },
+        -- { mode = 'x', keys = '<LocalLeader>lT', desc = 'Toggle ToC' },
+        -- { mode = 'x', keys = '<LocalLeader>lv', desc = 'View' },
+        -- { mode = 'x', keys = '<LocalLeader>lx', desc = 'Reload' },
+        -- { mode = 'x', keys = '<LocalLeader>lX', desc = 'Reload state' },
       },
 
       triggers = {
@@ -169,8 +172,8 @@ later(function() -- load plugins later
         { mode = 'x', keys = '<Leader>' },
 
         -- Local Leader
-        { mode = 'n', keys = '<LocalLeader>' },
-        { mode = 'x', keys = '<LocalLeader>' },
+        -- { mode = 'n', keys = '<LocalLeader>' },
+        -- { mode = 'x', keys = '<LocalLeader>' },
 
         -- Built-in completion
         { mode = 'i', keys = '<C-x>' },
@@ -278,9 +281,9 @@ later(function() -- leader key mappings
   lc('!', 'q!', 'Quit without saving')
   lc('b', 'split', 'Open buffer')
   lc('B', 'bd', 'Close buffer')
-  lc('d', 'lua vim.diagnostic.open_float()', 'Diagnose line')
   lc('D', 'lua MiniDiff.toggle_overlay()', 'Diff overlay')
   lc('f', 'lua MiniFiles.open()', 'Explore files')
+  lc('m', 'TSJToggle', 'Toggle multiline')
   lc('q', 'x', 'Save and quit')
   lc('s', 'w', 'Save')
   lc('S', 'w<CR>:source', 'Save and source')
@@ -289,33 +292,32 @@ later(function() -- leader key mappings
   lk('v', '<C-w>t<CR><C-w>H', 'Split to vertical')
   lc('w', 'q', 'Quit')
 
+  lc('ld', 'lua vim.diagnostic.open_float()', 'Diagnose line')
+  lc('lf', 'lua vim.lsp.buf.format()', 'Format file')
+  lc('l[', 'LspStart', 'Start client')
+  lc('l]', 'LspStop', 'Stop client')
+
   lc('pb', 'Pick buffers', 'Buffers')
   lc('pd', 'Pick diagnostic', 'Diagnostic')
   lc('pf', 'Pick files', 'Files')
   lc('ph', 'Pick help', 'Help')
   lc('pm', 'Pick marks', 'Marks')
   lc('pr', 'Pick registers', 'Registers')
+  lc('ps', 'Pick lsp scope="document_symbol"', 'Document symbols')
+  lc('pt', 'Pick treesitter', 'Treesitter nodes')
+  lc('pw', 'Pick lsp scope="workspace_symbol"', 'Workspace symbols')
 end)
 
-later(function() -- local leader key mappings
-  local ll = function(suffix, command, desc) -- command
-    vim.keymap.set(
-      'n',
-      '<LocalLeader>' .. suffix,
-      '<Cmd>' .. command .. '<CR>',
-      { desc = desc }
-    )
-  end
-
-  ll('[', 'LspStart', 'Start client')
-  ll(']', 'LspStop', 'Stop client')
-  ll('d', 'Pick diagnostic', 'Diagnostic')
-  ll('f', 'lua vim.lsp.buf.format()', 'Format file')
-  ll('m', 'TSJToggle', 'Toggle multiline')
-  ll('s', 'Pick lsp scope="document_symbol"', 'Document symbols')
-  ll('t', 'Pick treesitter', 'Treesitter nodes')
-  ll('w', 'Pick lsp scope="workspace_symbol"', 'Workspace symbols')
-end)
+-- later(function() -- local leader key mappings
+--   local ll = function(suffix, command, desc) -- command
+--     vim.keymap.set(
+--       'n',
+--       '<LocalLeader>' .. suffix,
+--       '<Cmd>' .. command .. '<CR>',
+--       { desc = desc }
+--     )
+--   end
+-- end)
 
 later(function() -- use tab for completion
   local imap_expr = function(lhs, rhs)
