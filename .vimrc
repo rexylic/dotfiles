@@ -16,11 +16,13 @@ set foldenable
 set nohidden 
 set nohlsearch 
 set ignorecase 
+set laststatus=2
 set shiftwidth=2
 set showbreak=⎆\  
 set showcmd
 set smartindent 
 set smarttab 
 set smoothscroll 
+set statusline=%f%M%=%l,%c;%L
 
 syntax enable
