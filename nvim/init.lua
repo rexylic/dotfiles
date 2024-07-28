@@ -75,7 +75,6 @@ now(function() -- vim
   o.number = true
   o.relativenumber = true
   o.shiftwidth = 2
-  o.showbreak = '⎆ '
   o.showcmd = true
   o.showmode = false
   o.signcolumn = 'yes:1'
