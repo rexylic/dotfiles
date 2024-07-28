@@ -167,7 +167,6 @@ later(function() -- load plugins later
         scroll_up = '<Up>',
       },
     }
-
   end
 
   require('mini.comment').setup {
@@ -267,14 +266,6 @@ end)
 --   end
 -- end)
 
-later(function() -- use tab for completion
-  local imap_expr = function(lhs, rhs)
-    vim.keymap.set('i', lhs, rhs, { expr = true })
-  end
-  imap_expr('<Tab>',   [[pumvisible() ? "\<C-n>" : "\<Tab>"]])
-  imap_expr('<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]])
-end)
-
 later(function() -- more consistent behaviour of <CR>
   local keycode = vim.keycode or function(x)
     return vim.api.nvim_replace_termcodes(x, true, true, true)
@@ -355,3 +346,4 @@ later(function() -- override mini.clue
 
   smd('x', '<LocalLeader>lL', 'Compile selected')
 end)
+
