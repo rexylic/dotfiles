@@ -1,11 +1,11 @@
-filetype plugin indent on
-
 call plug#begin()
   Plug 'lervag/vimtex'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-unimpaired'
 call plug#end()
+
+filetype plugin indent on
 
 let mapleader = "\ "
 let maplocalleader = "\\"
