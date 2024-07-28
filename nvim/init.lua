@@ -247,12 +247,6 @@ later(function() -- load plugins later
     autoread = true,
   }
 
-  require('mini.splitjoin').setup {
-    mappings = {
-      toggle = '<Leader>m',
-    },
-  }
-
   require('mini.surround').setup {}
 
   require('treesitter-context').setup {
