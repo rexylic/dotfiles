@@ -1,8 +1,6 @@
 local g = vim.g
-
-g.mapleader = ","
+g.mapleader = " "
 g.maplocalleader = "\\"
-
 g.vimtex_view_method = 'skim'
 g.vimtex_quickfix_ignore_filters = { 'Overfull' }
 
@@ -33,6 +31,8 @@ add {
 }
 add { source = 'nvim-treesitter/nvim-treesitter-context' }
 add { source = 'nvim-treesitter/nvim-treesitter-textobjects' }
+add { source = 'Wansmer/treesj' }
+add { source = 'dstein64/vim-startuptime' }
 add { source = 'lervag/vimtex' }
 
 now(function() -- load now
@@ -76,7 +76,7 @@ now(function() -- vim
   o.relativenumber = true
   o.shiftwidth = 2
   o.showmode = false
-  o.signcolumn = 'yes:2'
+  o.signcolumn = 'yes:1'
   o.softtabstop = 2
   o.smartindent = true
   o.smarttab = true
@@ -252,7 +252,13 @@ later(function() -- load plugins later
 
   require('mini.surround').setup {}
 
-  require('treesitter-context').setup { enable = true }
+  require('treesitter-context').setup {
+    enable = true,
+  }
+
+  require('treesj').setup {
+    use_default_keymaps = false,
+  }
 end)
 
 later(function() -- leader key mappings
@@ -294,10 +300,10 @@ end)
 later(function() -- local leader key mappings
   local ll = function(suffix, command, desc) -- command
     vim.keymap.set(
-    'n',
-    '<LocalLeader>' .. suffix,
-    '<Cmd>' .. command .. '<CR>',
-    { desc = desc }
+      'n',
+      '<LocalLeader>' .. suffix,
+      '<Cmd>' .. command .. '<CR>',
+      { desc = desc }
     )
   end
 
@@ -305,9 +311,9 @@ later(function() -- local leader key mappings
   ll(']', 'LspStop', 'Stop client')
   ll('d', 'Pick diagnostic', 'Diagnostic')
   ll('f', 'lua vim.lsp.buf.format()', 'Format file')
+  ll('m', 'TSJToggle', 'Toggle multiline')
   ll('s', 'Pick lsp scope="document_symbol"', 'Document symbols')
   ll('t', 'Pick treesitter', 'Treesitter nodes')
-  ll('m', 'TSJToggle', 'Toggle multiline')
   ll('w', 'Pick lsp scope="workspace_symbol"', 'Workspace symbols')
 end)
 
@@ -346,6 +352,7 @@ end)
 later(function() -- language server protocol (LSP)
   local lc = require('lspconfig')
   lc.html.setup {}
+  lc.marksman.setup {}
   lc.rust_analyzer.setup {}
   lc.sourcekit.setup {}
   lc.texlab.setup {}
@@ -364,4 +371,3 @@ later(function() -- vim diagnostic
     severity_sort = true,
   }
 end)
-
