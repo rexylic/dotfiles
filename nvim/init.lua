@@ -117,53 +117,7 @@ later(function() -- load plugins later
         -- Secondary groups
         { mode = 'n', keys = '<Leader>p', desc = '+Pick' },
         { mode = 'n', keys = '<Leader>l', desc = '+LSP' },
-        -- { mode = 'n', keys = '<LocalLeader>l', desc = '+VimTex' },
-
-        -- VimTex
-        -- { mode = 'n', keys = '<LocalLeader>la', desc = 'Context menu' },
-        -- { mode = 'n', keys = '<LocalLeader>lc', desc = 'Clean' },
-        -- { mode = 'n', keys = '<LocalLeader>lC', desc = 'Full clean' },
-        -- { mode = 'n', keys = '<LocalLeader>le', desc = 'Errors' },
-        -- { mode = 'n', keys = '<LocalLeader>lg', desc = 'Status' },
-        -- { mode = 'n', keys = '<LocalLeader>lG', desc = 'All status' },
-        -- { mode = 'n', keys = '<LocalLeader>li', desc = 'Info' },
-        -- { mode = 'n', keys = '<LocalLeader>lI', desc = 'Full info' },
-        -- { mode = 'n', keys = '<LocalLeader>lk', desc = 'Stop' },
-        -- { mode = 'n', keys = '<LocalLeader>lK', desc = 'Stop all' },
-        -- { mode = 'n', keys = '<LocalLeader>ll', desc = 'Compile' },
-        -- { mode = 'n', keys = '<LocalLeader>lm', desc = 'List imaps' },
-        -- { mode = 'n', keys = '<LocalLeader>lo', desc = 'Compile output' },
-        -- { mode = 'n', keys = '<LocalLeader>lq', desc = 'Log' },
-        -- { mode = 'n', keys = '<LocalLeader>lr', desc = 'Reverse search' },
-        -- { mode = 'n', keys = '<LocalLeader>ls', desc = 'Toggle main' },
-        -- { mode = 'n', keys = '<LocalLeader>lt', desc = 'Open ToC' },
-        -- { mode = 'n', keys = '<LocalLeader>lT', desc = 'Toggle ToC' },
-        -- { mode = 'n', keys = '<LocalLeader>lv', desc = 'View' },
-        -- { mode = 'n', keys = '<LocalLeader>lx', desc = 'Reload' },
-        -- { mode = 'n', keys = '<LocalLeader>lX', desc = 'Reload state' },
-        --
-        -- { mode = 'x', keys = '<LocalLeader>la', desc = 'Context menu' },
-        -- { mode = 'x', keys = '<LocalLeader>lc', desc = 'Clean' },
-        -- { mode = 'x', keys = '<LocalLeader>lC', desc = 'Full clean' },
-        -- { mode = 'x', keys = '<LocalLeader>le', desc = 'Errors' },
-        -- { mode = 'x', keys = '<LocalLeader>lg', desc = 'Status' },
-        -- { mode = 'x', keys = '<LocalLeader>lG', desc = 'All status' },
-        -- { mode = 'x', keys = '<LocalLeader>li', desc = 'Info' },
-        -- { mode = 'x', keys = '<LocalLeader>lI', desc = 'Full info' },
-        -- { mode = 'x', keys = '<LocalLeader>lk', desc = 'Stop' },
-        -- { mode = 'x', keys = '<LocalLeader>lK', desc = 'Stop all' },
-        -- { mode = 'x', keys = '<LocalLeader>ll', desc = 'Compile' },
-        -- { mode = 'x', keys = '<LocalLeader>lL', desc = 'Compile selected' },
-        -- { mode = 'x', keys = '<LocalLeader>lm', desc = 'List imaps' },
-        -- { mode = 'x', keys = '<LocalLeader>lo', desc = 'Compile output' },
-        -- { mode = 'x', keys = '<LocalLeader>lq', desc = 'Log' },
-        -- { mode = 'x', keys = '<LocalLeader>lr', desc = 'Reverse search' },
-        -- { mode = 'x', keys = '<LocalLeader>ls', desc = 'Toggle main' },
-        -- { mode = 'x', keys = '<LocalLeader>lt', desc = 'Open ToC' },
-        -- { mode = 'x', keys = '<LocalLeader>lT', desc = 'Toggle ToC' },
-        -- { mode = 'x', keys = '<LocalLeader>lv', desc = 'View' },
-        -- { mode = 'x', keys = '<LocalLeader>lx', desc = 'Reload' },
-        -- { mode = 'x', keys = '<LocalLeader>lX', desc = 'Reload state' },
+        { mode = 'n', keys = '<LocalLeader>l', desc = '+VimTex' },
       },
 
       triggers = {
@@ -172,8 +126,8 @@ later(function() -- load plugins later
         { mode = 'x', keys = '<Leader>' },
 
         -- Local Leader
-        -- { mode = 'n', keys = '<LocalLeader>' },
-        -- { mode = 'x', keys = '<LocalLeader>' },
+        { mode = 'n', keys = '<LocalLeader>' },
+        { mode = 'x', keys = '<LocalLeader>' },
 
         -- Built-in completion
         { mode = 'i', keys = '<C-x>' },
@@ -214,6 +168,7 @@ later(function() -- load plugins later
         scroll_up = '<Up>',
       },
     }
+
   end
 
   require('mini.comment').setup {
@@ -366,4 +321,38 @@ later(function() -- vim diagnostic
     virtual_text = false,
     severity_sort = true,
   }
+end)
+
+later(function() -- override mini.clue
+  local smd = function(mode, map, desc)
+    local current_map = vim.fn.maparg(map, mode, 0, 0)
+    if current_map ~= "" then
+      require('mini.clue').set_mapping_desc(mode, map, desc)
+    end
+  end
+
+  smd('n', '<LocalLeader>la', 'Context menu')
+  smd('n', '<LocalLeader>lC', 'Full clean')
+  smd('n', '<LocalLeader>lc', 'Clean')
+  smd('n', '<LocalLeader>le', 'Errors')
+  smd('n', '<LocalLeader>lG', 'All status')
+  smd('n', '<LocalLeader>lg', 'Status')
+  smd('n', '<LocalLeader>lI', 'Full info')
+  smd('n', '<LocalLeader>li', 'Info')
+  smd('n', '<LocalLeader>lK', 'Stop all')
+  smd('n', '<LocalLeader>lk', 'Stop')
+  smd('n', '<LocalLeader>lL', 'Compile selected')
+  smd('n', '<LocalLeader>ll', 'Compile')
+  smd('n', '<LocalLeader>lm', 'List imaps')
+  smd('n', '<LocalLeader>lo', 'Compile output')
+  smd('n', '<LocalLeader>lq', 'Log')
+  smd('n', '<LocalLeader>lr', 'Reverse search')
+  smd('n', '<LocalLeader>ls', 'Toggle main')
+  smd('n', '<LocalLeader>lT', 'Toggle ToC')
+  smd('n', '<LocalLeader>lt', 'Open ToC')
+  smd('n', '<LocalLeader>lv', 'View')
+  smd('n', '<LocalLeader>lX', 'Reload state')
+  smd('n', '<LocalLeader>lx', 'Reload')
+
+  smd('x', '<LocalLeader>lL', 'Compile selected')
 end)
