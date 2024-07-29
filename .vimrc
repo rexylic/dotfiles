@@ -29,7 +29,6 @@ nnoremap <Leader>w :Windows<CR>
 
 set backspace="eol,indent,start"
 set breakindent 
-set colorcolumn="81,101,121"
 set cursorline
 set expandtab 
 set foldenable 
@@ -37,8 +36,6 @@ set ignorecase
 set laststatus=2
 set nocompatible
 set nohidden 
-set number
-set relativenumber
 set scrolloff=10
 set shiftwidth=2
 set showbreak=⎆\  
