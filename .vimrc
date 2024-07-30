@@ -47,9 +47,12 @@ set backspace=eol,indent,start
 set breakindent 
 set expandtab
 set foldenable
-set foldmethod=syntax
+set foldlevel=5
+set foldmethod=indent
 set ignorecase
 set laststatus=2
+set list
+set listchars=tab:\ \ ,trail:·
 set shiftwidth=2
 set shortmess+=aI
 set showbreak=⎆\  
