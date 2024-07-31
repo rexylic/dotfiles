@@ -1,4 +1,4 @@
-function bak-vim --wraps='cp ~/.vimrc ~/.config/' --description 'alias bak-vim=cp ~/.vimrc ~/.config/'
-  cp ~/.vimrc ~/.config/ $argv
-        
+function bak-vim
+  cp ~/.vimrc ~/.config/
+  cp -R ~/.vim ~/.config/
 end
