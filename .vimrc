@@ -1,17 +1,40 @@
+augroup FtHtml
+  autocmd!
+  autocmd FileType html :iabbrev _< &lt;
+  autocmd FileType html :iabbrev _> &gt;
+  autocmd FileType html :iabbrev _" &quot;
+  autocmd FileType html :iabbrev _' &apos;
+  autocmd FileType html :iabbrev _& &amp;
+augroup END
+
+augroup FtMd
+  autocmd!
+  autocmd FileType md setlocal shiftwidth=4
+augroup END
+
+augroup FtVim
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
+augroup END
+
 call plug#begin()
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug '/opt/homebrew/opt/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'lervag/vimtex'
   Plug 'SirVer/ultisnips'
   Plug 'tpope/vim-commentary'
+  Plug 'wellle/context.vim'
 call plug#end()
 
 filetype plugin indent on
 
-hi ColorColumn ctermbg=lightgrey
+highlight ColorColumn term=inverse
+
+let g:context_highlight_tag = '<hide>'
+
+let g:filetype_md = 'pandoc'
 
 let g:fzf_vim = {}
-let g:fzf_vim.preview_window = []
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -26,32 +49,37 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
-let g:UltiSnipsEditSplit="tabdo"
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+let g:UltiSnipsEditSplit = "tabdo"
+let g:UltiSnipsExpandTrigger = "<Tab>"
+let g:UltiSnipsJumpForwardTrigger = "<Tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+
+let g:vimtex_quickfix_ignore_filters = ['Overfull']
+
+let loaded_matchparen = 1
 
 let mapleader="\ "
 let maplocalleader="\\"
 
-nnoremap J <C-f>
-nnoremap K <C-b>
+nnoremap J <c-f>
+nnoremap K <c-b>
 
-nnoremap <Leader>a :Ag<CR>
-nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>c :Commands<CR> 
-nnoremap <Leader>f :Files<CR>
-nnoremap <Leader>h :Helptags<CR>
-nnoremap <Leader>m :Marks<CR>
-nnoremap <Leader>r :Rg<CR>
-nnoremap <Leader>t :Tags<CR>
-nnoremap <Leader>w :Windows<CR>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>c :Commands<cr>
+nnoremap <leader>ev :sp $MYVIMRC<cr>
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>h :Helptags<cr>
+nnoremap <leader>m :Marks<cr>
+nnoremap <leader>r :Rg<cr>
+nnoremap <leader>t :Tags<cr>
+nnoremap <leader>w :Windows<cr>
 
-nnoremap <Leader>N :set cul! nu! rnu!<CR>
+nnoremap <leader>N :setl nu! rnu!<cr>
+nnoremap <leader>U :UltiSnipsEdit<cr>
 
 set autoread
 set backspace=eol,indent,start
-set breakindent 
+set breakindent
 set colorcolumn=81,101,121
 set expandtab
 set foldenable
@@ -62,8 +90,11 @@ set ignorecase
 set laststatus=2
 set list
 set listchars=trail:·
-set rtp+=/opt/homebrew/opt/fzf
-set scrolloff=10
+set nocompatible
+set number
+set relativenumber
+set scrolloff=9
+set shiftround
 set shiftwidth=2
 set shortmess+=aI
 set showbreak=|>
@@ -73,5 +104,8 @@ set smartcase
 set smartindent
 set smarttab
 set smoothscroll
-set statusline=%f%M%=%l,%c;%L
+set statusline=%F%M%=%c;%l/%L
 set wildmenu
+set wrap
+
+syntax enable
