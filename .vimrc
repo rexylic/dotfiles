@@ -23,6 +23,9 @@ call plug#begin()
   Plug 'lervag/vimtex'
   Plug 'SirVer/ultisnips'
   Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-unimpaired'
   Plug 'wellle/context.vim'
 call plug#end()
 
@@ -56,26 +59,26 @@ let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 
 let g:vimtex_quickfix_ignore_filters = ['Overfull']
 
-let loaded_matchparen = 1
-
 let mapleader="\ "
 let maplocalleader="\\"
 
-nnoremap J <c-f>
-nnoremap K <c-b>
+nnoremap J <c-d>
+nnoremap K <c-u>
 
-nnoremap <leader>b :Buffers<cr>
-nnoremap <leader>c :Commands<cr>
-nnoremap <leader>ev :sp $MYVIMRC<cr>
-nnoremap <leader>f :Files<cr>
-nnoremap <leader>h :Helptags<cr>
-nnoremap <leader>m :Marks<cr>
-nnoremap <leader>r :Rg<cr>
-nnoremap <leader>t :Tags<cr>
-nnoremap <leader>w :Windows<cr>
+nnoremap <leader>b      :Buffers<cr>
+nnoremap <leader>c      :Commands<cr>
+nnoremap <leader>f      :Files<cr>
+nnoremap <leader>h      :Helptags<cr>
+nnoremap <leader>j      :Jumps<cr>
+nnoremap <leader>l      :Lines<cr>
+nnoremap <leader>m      :Marks<cr>
+nnoremap <leader>r      :Rg<cr>
+nnoremap <leader>s      :Snippets<cr>
+nnoremap <leader>t      :Tags<cr>
+nnoremap <leader>w      :Windows<cr>
 
-nnoremap <leader>N :setl nu! rnu!<cr>
-nnoremap <leader>U :UltiSnipsEdit<cr>
+nnoremap <leader>N      :setl nu! rnu!<cr>
+nnoremap <leader>U      :UltiSnipsEdit<cr>
 
 set autoread
 set backspace=eol,indent,start
@@ -86,10 +89,11 @@ set foldenable
 set foldlevel=5
 set foldmethod=indent
 set formatoptions=
+set hlsearch
+set incsearch
 set ignorecase
 set laststatus=2
-set list
-set listchars=trail:·
+set mouse=a
 set nocompatible
 set number
 set relativenumber
@@ -97,7 +101,6 @@ set scrolloff=9
 set shiftround
 set shiftwidth=2
 set shortmess+=aI
-set showbreak=|>
 set showcmd
 set signcolumn=number
 set smartcase
@@ -106,6 +109,5 @@ set smarttab
 set smoothscroll
 set statusline=%F%M%=%c;%l/%L
 set wildmenu
-set wrap
 
 syntax enable
