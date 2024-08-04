@@ -1,5 +1,51 @@
-" colours {{{
-highlight ColorColumn term=inverse
+" leader {{{
+let mapleader="\ "
+let maplocalleader="\\"
+" }}}
+
+" plugins {{{
+call plug#begin()
+  Plug '/opt/homebrew/opt/fzf'
+  Plug 'junegunn/fzf.vim'
+  Plug 'lervag/vimtex'
+  Plug 'SirVer/ultisnips'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-unimpaired'
+  Plug 'wellle/context.vim'
+call plug#end()
+" }}}
+
+" variables {{{
+let g:context_highlight_tag = '<hide>'
+
+let g:filetype_md = 'pandoc'
+
+let g:fzf_vim = {}
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+let g:pencil_higher_contrast_ui = 1
+let g:pencil_terminal_italics = 1
+
+let g:UltiSnipsEditSplit = "tabdo"
+let g:UltiSnipsExpandTrigger = "<Tab>"
+let g:UltiSnipsJumpForwardTrigger = "<Tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+
+let g:vimtex_quickfix_ignore_filters = ['Overfull']
 " }}}
 
 " filetypes {{{
@@ -46,6 +92,9 @@ nnoremap <leader>w      :Windows<cr>
 
 nnoremap <leader>N      :setl nu! rnu!<cr>
 nnoremap <leader>U      :UltiSnipsEdit<cr>
+
+nnoremap <expr> <leader>D       &background == 'light' ? 
+                                \ ':set bg=dark<cr>' : ':set bg=light<cr>'
 " }}}
 
 " options {{{
@@ -80,47 +129,6 @@ set statusline=%F%M%=%c;%l/%L
 set wildmenu
 " }}}
 
-" plugins {{{
-call plug#begin()
-  Plug '/opt/homebrew/opt/fzf'
-  Plug 'junegunn/fzf.vim'
-  Plug 'lervag/vimtex'
-  Plug 'SirVer/ultisnips'
-  Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-unimpaired'
-  Plug 'wellle/context.vim'
-call plug#end()
-" }}}
-
-" variables {{{
-let g:context_highlight_tag = '<hide>'
-
-let g:filetype_md = 'pandoc'
-
-let g:fzf_vim = {}
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
-
-let g:UltiSnipsEditSplit = "tabdo"
-let g:UltiSnipsExpandTrigger = "<Tab>"
-let g:UltiSnipsJumpForwardTrigger = "<Tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
-
-let g:vimtex_quickfix_ignore_filters = ['Overfull']
-
-let mapleader="\ "
-let maplocalleader="\\"
+" theme {{{
+colorscheme pencil
 " }}}
