@@ -1,7 +1,6 @@
 " options {{{
 set autoread
 set backspace=eol,indent,start
-set background&
 set breakindent
 set colorcolumn=81,101,121
 set expandtab
@@ -97,10 +96,10 @@ syntax enable
 if !empty($COLORFGBG) && stridx($COLORFGBG, ';') != -1
   let parts = split($COLORFGBG, ';')
   if parts[1] == '0'
-    set background=dark
+    set bg=dark
+  else
+    set bg=light
   endif
-else
-  set background=light
 endif
 " }}}
 
