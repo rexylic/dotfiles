@@ -1,4 +1,6 @@
-" options {{{
+" opt {{{
+filetype plugin indent on
+
 set autoread
 set backspace=eol,indent,start
 set breakindent
@@ -10,11 +12,13 @@ set formatoptions=
 set hlsearch
 set incsearch
 set ignorecase
+set iskeyword-=_
 set laststatus=2
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set mouse=a
 set nocompatible
 set relativenumber
+set scrolloff=9
 set shiftround
 set shiftwidth=2
 set shortmess+=aI
@@ -27,19 +31,16 @@ set smoothscroll
 set statusline=%f%M%=%c,%l;%L
 set ttimeoutlen=1000
 set wildmenu
+
+syntax enable
 " }}}
 
-" leader {{{
+" var {{{
 let mapleader="\ "
 let maplocalleader="\\"
-" }}}
 
-" variables {{{
-let g:context_enabled = 0
 let g:context_highlight_tag = '<hide>'
-let g:context_max_height = 7
-let g:context_max_per_indent = 3
-let g:context_max_join_parts = 1
+let g:context_max_height = 5
 
 let g:filetype_md = 'pandoc'
 
@@ -69,15 +70,8 @@ let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 let g:vimtex_quickfix_ignore_filters = ['Overfull']
 " }}}
 
-" filetypes {{{
-filetype plugin indent on
-syntax enable
-" }}}
-
-" keymaps {{{
+" map {{{
 nnoremap ` <c-w>
-nnoremap , zt
-
 nnoremap J <c-d>
 nnoremap K <c-u>
 
@@ -105,22 +99,19 @@ nnoremap <leader>C  :let @/ = ""<cr>
 nnoremap <leader>F  :NERDTreeToggle<cr>
 nnoremap <leader>L  :setl list!<cr>
 nnoremap <leader>N  :setl nu! rnu!<cr>
-nnoremap <leader>Pc :PlugClean<cr>
-nnoremap <leader>Pi :w<cr>:source %<cr>:PlugInstall<cr>
-nnoremap <leader>Pu :PlugUpdate<cr>
 nnoremap <leader>Sr :source ./
 nnoremap <leader>Sw :mksession ./
 nnoremap <leader>U  :UltiSnipsEdit<cr>
-nnoremap <leader>X  :ContextPeak<cr>
+nnoremap <leader>V  :tabe ~/.vimrc<cr>
+nnoremap <leader>X  :ContextEnable<cr>:ContextPeek<cr>
 " }}}
 
-" plugins {{{
+" plug {{{
 call plug#begin()
   Plug '/opt/homebrew/opt/fzf'
 	Plug 'altercation/vim-colors-solarized'
   Plug 'junegunn/fzf.vim'
   Plug 'lervag/vimtex'
-  Plug 'NLKNguyen/papercolor-theme'
   Plug 'preservim/nerdtree'
   Plug 'SirVer/ultisnips'
   Plug 'tpope/vim-commentary'
