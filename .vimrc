@@ -6,28 +6,26 @@ set colorcolumn=81,101,121
 set expandtab
 set foldenable
 set foldlevel=4
-set foldmethod=indent
 set formatoptions=
 set hlsearch
 set incsearch
 set ignorecase
 set laststatus=2
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set mouse=a
 set nocompatible
-set number
 set relativenumber
-set scrolloff=9
 set shiftround
 set shiftwidth=2
 set shortmess+=aI
 set showcmd
+set sidescrolloff=16
 set signcolumn=number
 set smartcase
 set smartindent
 set smoothscroll
-set statusline=%F%M%=%c;%l/%L
-set termguicolors
-set t_Co=256
+set statusline=%f%M%=%c,%l;%L
+set ttimeoutlen=1000
 set wildmenu
 " }}}
 
@@ -37,7 +35,11 @@ let maplocalleader="\\"
 " }}}
 
 " variables {{{
+let g:context_enabled = 0
 let g:context_highlight_tag = '<hide>'
+let g:context_max_height = 7
+let g:context_max_per_indent = 3
+let g:context_max_join_parts = 1
 
 let g:filetype_md = 'pandoc'
 
@@ -68,73 +70,58 @@ let g:vimtex_quickfix_ignore_filters = ['Overfull']
 " }}}
 
 " filetypes {{{
-augroup FtHtml
-  autocmd!
-  autocmd FileType html :iabbrev _< &lt;
-  autocmd FileType html :iabbrev _> &gt;
-  autocmd FileType html :iabbrev _" &quot;
-  autocmd FileType html :iabbrev _' &apos;
-  autocmd FileType html :iabbrev _& &amp;
-augroup END
-
-augroup FtMd
-  autocmd!
-  autocmd FileType md setlocal shiftwidth=4
-augroup END
-
-augroup FtVim
-  autocmd!
-  autocmd FileType vim setlocal foldmethod=marker
-  autocmd FileType vim setlocal foldlevel=0
-augroup END
-
 filetype plugin indent on
 syntax enable
 " }}}
 
-" proc {{{
-if !empty($COLORFGBG) && stridx($COLORFGBG, ';') != -1
-  let parts = split($COLORFGBG, ';')
-  if parts[1] == '0'
-    set bg=dark
-  else
-    set bg=light
-  endif
-endif
-" }}}
-
 " keymaps {{{
+nnoremap ` <c-w>
+nnoremap , zt
+
 nnoremap J <c-d>
 nnoremap K <c-u>
 
+nnoremap [B :bfirst<cr>
+nnoremap ]B :blast<cr>
+
+nnoremap [b :bprevious<cr>
+nnoremap ]b :bnext<cr>
 nnoremap [h <c-t>
 nnoremap ]h <c-]>
 
-nnoremap <leader>b      :Buffers<cr>
-nnoremap <leader>c      :Commands<cr>
-nnoremap <leader>f      :Files<cr>
-nnoremap <leader>h      :Helptags<cr>
-nnoremap <leader>j      :Jumps<cr>
-nnoremap <leader>l      :Lines<cr>
-nnoremap <leader>m      :Marks<cr>
-nnoremap <leader>r      :Rg<cr>
-nnoremap <leader>s      :Snippets<cr>
-nnoremap <leader>t      :Tags<cr>
-nnoremap <leader>w      :Windows<cr>
+nnoremap <leader>b  :Buffers<cr>
+nnoremap <leader>c  :Commands<cr>
+nnoremap <leader>f  :Files<cr>
+nnoremap <leader>h  :Helptags<cr>
+nnoremap <leader>j  :Jumps<cr>
+nnoremap <leader>l  :Lines<cr>
+nnoremap <leader>m  :Marks<cr>
+nnoremap <leader>r  :Rg<cr>
+nnoremap <leader>s  :Snippets<cr>
+nnoremap <leader>t  :Tags<cr>
+nnoremap <leader>w  :Windows<cr>
 
-nnoremap <leader>N      :setl nu! rnu!<cr>
-nnoremap <leader>Pc     :PlugClean<cr>
-nnoremap <leader>Pi     :w<cr>:source %<cr>:PlugInstall<cr>
-nnoremap <leader>Pu     :PlugUpdate<cr>
-nnoremap <leader>U      :UltiSnipsEdit<cr>
+nnoremap <leader>C  :let @/ = ""<cr>
+nnoremap <leader>F  :NERDTreeToggle<cr>
+nnoremap <leader>L  :setl list!<cr>
+nnoremap <leader>N  :setl nu! rnu!<cr>
+nnoremap <leader>Pc :PlugClean<cr>
+nnoremap <leader>Pi :w<cr>:source %<cr>:PlugInstall<cr>
+nnoremap <leader>Pu :PlugUpdate<cr>
+nnoremap <leader>Sr :source ./
+nnoremap <leader>Sw :mksession ./
+nnoremap <leader>U  :UltiSnipsEdit<cr>
+nnoremap <leader>X  :ContextPeak<cr>
 " }}}
 
 " plugins {{{
 call plug#begin()
   Plug '/opt/homebrew/opt/fzf'
+	Plug 'altercation/vim-colors-solarized'
   Plug 'junegunn/fzf.vim'
   Plug 'lervag/vimtex'
   Plug 'NLKNguyen/papercolor-theme'
+  Plug 'preservim/nerdtree'
   Plug 'SirVer/ultisnips'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-repeat'
@@ -144,6 +131,15 @@ call plug#end()
 " }}}
 
 " theme {{{
-colorscheme PaperColor
+if !empty($COLORFGBG) && stridx($COLORFGBG, ';') != -1
+  let parts = split($COLORFGBG, ';')
+  if parts[1] == '0'
+    set bg=dark
+  else
+    set bg=light
+  endif
+endif
+
+colorscheme solarized
 " }}}
 
