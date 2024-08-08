@@ -28,7 +28,9 @@ set signcolumn=number
 set smartcase
 set smartindent
 set smoothscroll
+set softtabstop=2
 set statusline=%f%M%=%c,%l;%L
+set tabstop=2
 set ttimeoutlen=1000
 set wildmenu
 
@@ -109,7 +111,7 @@ nnoremap <leader>X  :ContextEnable<cr>:ContextPeek<cr>
 " plug {{{
 call plug#begin()
   Plug '/opt/homebrew/opt/fzf'
-	Plug 'altercation/vim-colors-solarized'
+  Plug 'altercation/vim-colors-solarized'
   Plug 'junegunn/fzf.vim'
   Plug 'lervag/vimtex'
   Plug 'preservim/nerdtree'
