@@ -1,10 +1,9 @@
 " plug {{{
 call plug#begin()
-	Plug '/opt/homebrew/opt/fzf'
 	Plug 'altercation/vim-colors-solarized'
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
 	Plug 'lervag/vimtex'
-	Plug 'mhinz/vim-tree'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-surround'
@@ -107,7 +106,7 @@ nnoremap ]t :tabnext<cr>
 
 nnoremap <leader>b	:Buffers<cr>
 nnoremap <leader>c	:Commands<cr>
-nnoremap <leader>d	:exe 'Rg ' . expand('<cWORD>')<cr>
+nnoremap <leader>d	:exe 'Rg ' . expand('<cword>')<cr>
 nnoremap <leader>f	:Files<cr>
 nnoremap <leader>h	:Helptags<cr>
 nnoremap <leader>j	:Jumps<cr>
@@ -115,17 +114,14 @@ nnoremap <leader>l	:Lines<cr>
 nnoremap <leader>m	:Marks<cr>
 nnoremap <leader>r	:Rg<cr>
 nnoremap <leader>s	:Snippets<cr>
-nnoremap <leader>t	:Tags<cr>
 nnoremap <leader>w	:Windows<cr>
 
 nnoremap <leader>C	:let @/ = ""<cr>
 nnoremap <leader>I	:%ret!<cr>
 nnoremap <leader>L	:setl list!<cr>
-nnoremap <leader>N	:setl nu! rnu!<cr>
 nnoremap <leader>T	:Tree<cr>
 nnoremap <leader>U	:UltiSnipsEdit<cr>
 nnoremap <leader>W	:setl wrap!<cr>
-nnoremap <leader>X	:ContextEnable<cr>:ContextPeek<cr>
 " }}}
 
 " theme {{{
@@ -139,4 +135,8 @@ if !empty($COLORFGBG) && stridx($COLORFGBG, ';') != -1
 endif
 
 colorscheme solarized
+" }}}
+
+" lsp {{{
+packadd lsp
 " }}}
