@@ -1,17 +1,17 @@
 " plug {{{
 call plug#begin()
-  Plug '/opt/homebrew/opt/fzf'
-  Plug 'altercation/vim-colors-solarized'
-  Plug 'junegunn/fzf.vim'
-  Plug 'lervag/vimtex'
-  Plug 'mhinz/vim-tree'
-  Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-surround'
-  Plug 'wellle/context.vim'
-  if has('python3')
-    Plug 'SirVer/ultisnips'
- endif
+	Plug '/opt/homebrew/opt/fzf'
+	Plug 'altercation/vim-colors-solarized'
+	Plug 'junegunn/fzf.vim'
+	Plug 'lervag/vimtex'
+	Plug 'mhinz/vim-tree'
+	Plug 'tpope/vim-commentary'
+	Plug 'tpope/vim-repeat'
+	Plug 'tpope/vim-surround'
+	Plug 'wellle/context.vim'
+	if has('python3')
+		Plug 'SirVer/ultisnips'
+	endif
 call plug#end()
 " }}}
 
@@ -26,25 +26,25 @@ let g:filetype_md = 'pandoc'
 
 let g:fzf_vim = {}
 let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+\ { 'fg':			 ['fg', 'Normal'],
+	\ 'bg':			 ['bg', 'Normal'],
+	\ 'hl':			 ['fg', 'Comment'],
+	\ 'fg+':		 ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+	\ 'bg+':		 ['bg', 'CursorLine', 'CursorColumn'],
+	\ 'hl+':		 ['fg', 'Statement'],
+	\ 'info':		 ['fg', 'PreProc'],
+	\ 'border':  ['fg', 'Ignore'],
+	\ 'prompt':  ['fg', 'Conditional'],
+	\ 'pointer': ['fg', 'Exception'],
+	\ 'marker':  ['fg', 'Keyword'],
+	\ 'spinner': ['fg', 'Label'],
+	\ 'header':  ['fg', 'Comment'] }
 
 if has('python3')
-  let g:UltiSnipsEditSplit = "tabdo"
-  let g:UltiSnipsExpandTrigger = "<Tab>"
-  let g:UltiSnipsJumpForwardTrigger = "<Tab>"
-  let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+	let g:UltiSnipsEditSplit = "tabdo"
+	let g:UltiSnipsExpandTrigger = "<Tab>"
+	let g:UltiSnipsJumpForwardTrigger = "<Tab>"
+	let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 endif
 
 let g:vimtex_quickfix_ignore_filters = ['Overfull']
@@ -105,37 +105,37 @@ nnoremap ]h <c-]>
 nnoremap [t :tabprevious<cr>
 nnoremap ]t :tabnext<cr>
 
-nnoremap <leader>b  :Buffers<cr>
-nnoremap <leader>c  :Commands<cr>
-nnoremap <leader>d  :exe 'Rg ' . expand('<cWORD>')<cr>
-nnoremap <leader>f  :Files<cr>
-nnoremap <leader>h  :Helptags<cr>
-nnoremap <leader>j  :Jumps<cr>
-nnoremap <leader>l  :Lines<cr>
-nnoremap <leader>m  :Marks<cr>
-nnoremap <leader>r  :Rg<cr>
-nnoremap <leader>s  :Snippets<cr>
-nnoremap <leader>t  :Tags<cr>
-nnoremap <leader>w  :Windows<cr>
+nnoremap <leader>b	:Buffers<cr>
+nnoremap <leader>c	:Commands<cr>
+nnoremap <leader>d	:exe 'Rg ' . expand('<cWORD>')<cr>
+nnoremap <leader>f	:Files<cr>
+nnoremap <leader>h	:Helptags<cr>
+nnoremap <leader>j	:Jumps<cr>
+nnoremap <leader>l	:Lines<cr>
+nnoremap <leader>m	:Marks<cr>
+nnoremap <leader>r	:Rg<cr>
+nnoremap <leader>s	:Snippets<cr>
+nnoremap <leader>t	:Tags<cr>
+nnoremap <leader>w	:Windows<cr>
 
-nnoremap <leader>C  :let @/ = ""<cr>
-nnoremap <leader>I  :%ret!<cr>
-nnoremap <leader>L  :setl list!<cr>
-nnoremap <leader>N  :setl nu! rnu!<cr>
-nnoremap <leader>T  :Tree<cr>
-nnoremap <leader>U  :UltiSnipsEdit<cr>
-nnoremap <leader>W  :setl wrap!<cr>
-nnoremap <leader>X  :ContextEnable<cr>:ContextPeek<cr>
+nnoremap <leader>C	:let @/ = ""<cr>
+nnoremap <leader>I	:%ret!<cr>
+nnoremap <leader>L	:setl list!<cr>
+nnoremap <leader>N	:setl nu! rnu!<cr>
+nnoremap <leader>T	:Tree<cr>
+nnoremap <leader>U	:UltiSnipsEdit<cr>
+nnoremap <leader>W	:setl wrap!<cr>
+nnoremap <leader>X	:ContextEnable<cr>:ContextPeek<cr>
 " }}}
 
 " theme {{{
 if !empty($COLORFGBG) && stridx($COLORFGBG, ';') != -1
-  let parts = split($COLORFGBG, ';')
-  if parts[1] == '0'
-    set bg=dark
-  else
-    set bg=light
-  endif
+	let parts = split($COLORFGBG, ';')
+	if parts[1] == '0'
+		set bg=dark
+	else
+		set bg=light
+	endif
 endif
 
 colorscheme solarized
