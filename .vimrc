@@ -50,43 +50,31 @@ endif
 let g:vimtex_quickfix_ignore_filters = ['Overfull']
 " }}}
 
-" opt {{{
+" ft {{{
 filetype plugin indent on
+" }}}
 
-set autoread
+" opt {{{
+set ar bri fen hls is nocp noet rnu sr sc scs si sms wmnu wrap
 set backspace=eol,indent,start
-set breakindent
+set background&
 set colorcolumn=81,101,121
-set expandtab
-set foldenable
 set foldlevel=4
-set formatoptions=
-set hlsearch
-set incsearch
-set ignorecase
+set foldmethod=indent
+set formatoptions=tcro/qwaljp
 set iskeyword-=_
 set laststatus=2
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set mouse=a
-set nocompatible
-set relativenumber
 set scrolloff=9
-set shiftround
 set shiftwidth=2
 set shortmess+=aI
-set showcmd
 set sidescrolloff=16
-set signcolumn=number
-set smartcase
-set smartindent
-set smoothscroll
 set softtabstop=2
 set statusline=%f%M%=%c,%l;%L
 set tabstop=2
+set textwidth=80
 set ttimeoutlen=1000
-set wildmenu
-
-syntax enable
 " }}}
 
 " map {{{
@@ -119,6 +107,7 @@ nnoremap ]t :tabnext<cr>
 
 nnoremap <leader>b  :Buffers<cr>
 nnoremap <leader>c  :Commands<cr>
+nnoremap <leader>d  :exe 'Rg ' . expand('<cWORD>')<cr>
 nnoremap <leader>f  :Files<cr>
 nnoremap <leader>h  :Helptags<cr>
 nnoremap <leader>j  :Jumps<cr>
@@ -129,11 +118,13 @@ nnoremap <leader>s  :Snippets<cr>
 nnoremap <leader>t  :Tags<cr>
 nnoremap <leader>w  :Windows<cr>
 
-nnoremap <leader>C  :let @/ = #"<cr>
+nnoremap <leader>C  :let @/ = ""<cr>
+nnoremap <leader>I  :%ret!<cr>
 nnoremap <leader>L  :setl list!<cr>
 nnoremap <leader>N  :setl nu! rnu!<cr>
 nnoremap <leader>T  :Tree<cr>
 nnoremap <leader>U  :UltiSnipsEdit<cr>
+nnoremap <leader>W  :setl wrap!<cr>
 nnoremap <leader>X  :ContextEnable<cr>:ContextPeek<cr>
 " }}}
 
@@ -149,4 +140,3 @@ endif
 
 colorscheme solarized
 " }}}
-

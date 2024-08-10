@@ -1,1 +1,9 @@
+[[language]]
+name = "HTML"
+scope = "source.html"
+file-types = ["html"]
+auto-format = true
+diagnostic-severity = "Error"
+indent.unit = "\t"
+indent.tab-width = 2
 

@@ -1,9 +1,10 @@
-theme = "tokyonight"
+theme = "base16_default"
 
 [editor]
 scrolloff = 9
 mouse = false
 line-number = "relative"
+true-color = true
 rulers = [80, 100, 120]
 bufferline = "multiple"
 color-modes = true
