@@ -6,6 +6,7 @@ call plug#begin()
 	Plug 'junegunn/vim-easy-align'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
+	Plug 'junegunn/goyo.vim'
 
 	Plug 'lervag/vimtex'
 
@@ -48,16 +49,19 @@ let g:fzf_colors =
 	\ 'marker':  ['fg', 'Keyword'],
 	\ 'spinner': ['fg', 'Label'],
 	\ 'header':  ['fg', 'Comment'] }
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8, 'yoffset': 0.4 } }
+let g:fzf_layout = 
+\ { 'window': { 'width': 0.8, 'height': 0.8, 'yoffset': 0.45 } }
 
 let g:fzf_vim = {}
-let g:fzf_vim.preview_window = ['right,50%,<100(up,40%)', 'ctrl-/']
+let g:fzf_vim.preview_window = ['right,50%,<80(up,40%)', 'ctrl-/']
+
+let g:goyo_width = "100"
 
 if has('python3')
 	let g:UltiSnipsEditSplit = "tabdo"
-	let g:UltiSnipsExpandTrigger = "<Tab>"
-	let g:UltiSnipsJumpForwardTrigger = "<Tab>"
-	let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+	let g:UltiSnipsExpandTrigger = "<tab>"
+	let g:UltiSnipsJumpForwardTrigger = "<tab>"
+	let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 endif
 
 let g:vimtex_quickfix_ignore_filters = ['Overfull']
@@ -85,12 +89,12 @@ set laststatus=2
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 
 set nocompatible
+set noshowcmd
 
 set scrolloff=9
 set shiftround
 set shiftwidth=0
 set shortmess+=aI
-set showcmd
 set sidescrolloff=16
 set smartcase
 set smartindent
@@ -145,13 +149,13 @@ nnoremap <leader>l	:BLines<cr>
 nnoremap <leader>m	:Marks<cr>
 nnoremap <leader>r	:Rg<cr>
 nnoremap <leader>s	:Snippets<cr>
+nnoremap <leader>u	:UltiSnipsEdit<cr>
 nnoremap <leader>w	:Windows<cr>
 
 nnoremap <leader>C	:let @/ = ""<cr>
-nnoremap <leader>I	:%ret!<cr>
+nnoremap <leader>G  :Goyo<cr>
 nnoremap <leader>L	:setl list!<cr>
 nnoremap <leader>N  :setl rnu!<cr>
-nnoremap <leader>U	:UltiSnipsEdit<cr>
 nnoremap <leader>W	:setl wrap!<cr>
 
 " }}}
