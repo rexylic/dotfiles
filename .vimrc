@@ -99,7 +99,7 @@ set sidescrolloff=16
 set smartcase
 set smartindent
 set smoothscroll
-set statusline=%f%M%=%c,%l;%L
+set statusline=%f%M%=%l:%c\ %L
 
 set tabstop=2
 set textwidth=80
@@ -147,6 +147,7 @@ nnoremap <leader>h	:Helptags<cr>
 nnoremap <leader>j	:Jumps<cr>
 nnoremap <leader>l	:BLines<cr>
 nnoremap <leader>m	:Marks<cr>
+nnoremap <leader>o	o<esc>
 nnoremap <leader>r	:Rg<cr>
 nnoremap <leader>s	:Snippets<cr>
 nnoremap <leader>u	:UltiSnipsEdit<cr>
@@ -156,6 +157,7 @@ nnoremap <leader>C	:let @/ = ""<cr>
 nnoremap <leader>G  :Goyo<cr>
 nnoremap <leader>L	:setl list!<cr>
 nnoremap <leader>N  :setl rnu!<cr>
+nnoremap <leader>O	O<esc>
 nnoremap <leader>W	:setl wrap!<cr>
 
 " }}}
