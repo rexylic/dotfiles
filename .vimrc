@@ -48,9 +48,10 @@ let g:fzf_colors =
 	\ 'marker':  ['fg', 'Keyword'],
 	\ 'spinner': ['fg', 'Label'],
 	\ 'header':  ['fg', 'Comment'] }
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8, 'yoffset': 0.4 } }
 
 let g:fzf_vim = {}
-let g:fzf_vim.preview_window = ['right,50%,<100(up,30%)', 'ctrl-/']
+let g:fzf_vim.preview_window = ['right,50%,<100(up,40%)', 'ctrl-/']
 
 if has('python3')
 	let g:UltiSnipsEditSplit = "tabdo"
@@ -140,7 +141,7 @@ nnoremap <leader>d	:exe 'Rg ' . expand('<cword>')<cr>
 nnoremap <leader>f	:Files<cr>
 nnoremap <leader>h	:Helptags<cr>
 nnoremap <leader>j	:Jumps<cr>
-nnoremap <leader>l	:Lines<cr>
+nnoremap <leader>l	:BLines<cr>
 nnoremap <leader>m	:Marks<cr>
 nnoremap <leader>r	:Rg<cr>
 nnoremap <leader>s	:Snippets<cr>
