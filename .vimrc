@@ -1,6 +1,7 @@
 " plug {{{
 
 call plug#begin()
+
 	Plug 'altercation/vim-colors-solarized'
 
 	Plug 'junegunn/vim-easy-align'
@@ -21,6 +22,7 @@ call plug#begin()
 	if has('python3')
 		Plug 'SirVer/ultisnips'
 	endif
+
 call plug#end()
 
 " }}}
@@ -75,6 +77,7 @@ set background&
 set breakindent
 
 set colorcolumn=81,101,121
+set cursorline
 
 set foldlevel=4
 set foldmethod=indent
@@ -90,6 +93,9 @@ set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 
 set nocompatible
 set noshowcmd
+set number
+
+set relativenumber
 
 set scrolloff=9
 set shiftround
@@ -99,11 +105,10 @@ set sidescrolloff=16
 set smartcase
 set smartindent
 set smoothscroll
-set statusline=%f%M%=%l:%c\ %L
+set statusline=%f%M%R%=%l:%c\ %L
 
 set tabstop=2
 set textwidth=80
-set ttimeoutlen=1000
 
 set wildmenu
 set wrap
@@ -139,26 +144,22 @@ nnoremap ]h <c-]>
 nnoremap [t :tabprevious<cr>
 nnoremap ]t :tabnext<cr>
 
-nnoremap <leader>b	:Buffers<cr>
-nnoremap <leader>c	:Commands<cr>
-nnoremap <leader>d	:exe 'Rg ' . expand('<cword>')<cr>
-nnoremap <leader>f	:Files<cr>
-nnoremap <leader>h	:Helptags<cr>
-nnoremap <leader>j	:Jumps<cr>
-nnoremap <leader>l	:BLines<cr>
-nnoremap <leader>m	:Marks<cr>
-nnoremap <leader>o	o<esc>
-nnoremap <leader>r	:Rg<cr>
-nnoremap <leader>s	:Snippets<cr>
-nnoremap <leader>u	:UltiSnipsEdit<cr>
-nnoremap <leader>w	:Windows<cr>
+nnoremap <leader>C :let @/ = ""<cr>
+nnoremap <leader>G :Goyo<cr>
+nnoremap <leader>L :setl list!<cr>
+nnoremap <leader>W :setl wrap!<cr>
 
-nnoremap <leader>C	:let @/ = ""<cr>
-nnoremap <leader>G  :Goyo<cr>
-nnoremap <leader>L	:setl list!<cr>
-nnoremap <leader>N  :setl rnu!<cr>
-nnoremap <leader>O	O<esc>
-nnoremap <leader>W	:setl wrap!<cr>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>d :exe 'Rg ' . expand('<cword>')<cr>
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>h :Helptags<cr>
+nnoremap <leader>j :Jumps<cr>
+nnoremap <leader>l :BLines<cr>
+nnoremap <leader>m :Marks<cr>
+nnoremap <leader>r :Rg<cr>
+nnoremap <leader>s :Snippets<cr>
+nnoremap <leader>u :UltiSnipsEdit<cr>
+nnoremap <leader>w :Windows<cr>
 
 " }}}
 
@@ -177,3 +178,4 @@ filetype plugin indent on
 syntax enable
 
 " }}}
+
