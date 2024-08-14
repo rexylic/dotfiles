@@ -1,15 +1,32 @@
-snippet cb "Code Block"
+snippet pc "Pre Code"
 <pre><code class="$1">
 $2
 </code></pre>
 endsnippet
 
 snippet t "Tag"
-<$1>
+<${1:p}>
 	$2
 </$1>
 endsnippet
 
 snippet i "Inline Tag"
-<$1>$2</$1>
+<${1:b}>$2</$1>
 endsnippet
+
+snippet h1 "Heading"
+<h1 id="$1">$2</h1>
+endsnippet
+
+snippet h1l "Heading with Label"
+<h1 id="$1" label="$2">$3</h1>
+endsnippet
+
+snippet h2 "Subheading"
+<h2 id="$1">$2</h2>
+endsnippet
+
+snippet h2l "Subheading with Label"
+<h2 id="$1" label="$2">$3</h2>
+endsnippet
+

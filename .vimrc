@@ -1,10 +1,6 @@
 " plug {{{
 
 call plug#begin()
-
-	Plug 'altercation/vim-colors-solarized'
-
-	Plug 'junegunn/vim-easy-align'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/goyo.vim'
@@ -14,6 +10,7 @@ call plug#begin()
 	Plug 'NLKNguyen/papercolor-theme'
 
 	Plug 'tpope/vim-commentary'
+	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-surround'
 
@@ -22,20 +19,13 @@ call plug#begin()
 	if has('python3')
 		Plug 'SirVer/ultisnips'
 	endif
-
 call plug#end()
 
 " }}}
 
 " var {{{
 
-let g:mapleader = "\ "
-let g:maplocalleader = "\\"
-
 let g:context_highlight_tag = '<hide>'
-let g:context_max_height = 5
-
-let g:filetype_md = 'pandoc'
 
 let g:fzf_colors =
 \ { 'fg':			 ['fg', 'Normal'],
@@ -59,14 +49,19 @@ let g:fzf_vim.preview_window = ['right,50%,<80(up,40%)', 'ctrl-/']
 
 let g:goyo_width = "100"
 
+let g:mapleader = "\ "
+let g:maplocalleader = "\\"
+
+let g:pandoc#syntax#conceal#use = 0
+
+let g:vimtex_quickfix_ignore_filters = ['Overfull']
+
 if has('python3')
 	let g:UltiSnipsEditSplit = "tabdo"
 	let g:UltiSnipsExpandTrigger = "<tab>"
 	let g:UltiSnipsJumpForwardTrigger = "<tab>"
 	let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 endif
-
-let g:vimtex_quickfix_ignore_filters = ['Overfull']
 
 " }}}
 
@@ -81,18 +76,21 @@ set cursorline
 
 set foldlevel=4
 set foldmethod=indent
-set formatoptions=q
+set formatoptions=
 
 set hlsearch
 
 set incsearch
 set iskeyword-=_
 
-set laststatus=2
+set lazyredraw
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 
 set nocompatible
+set noesckeys
 set noshowcmd
+set notimeout
+set nottimeout
 set number
 
 set relativenumber
@@ -101,7 +99,8 @@ set scrolloff=9
 set shiftround
 set shiftwidth=0
 set shortmess+=aI
-set sidescrolloff=16
+set showcmd
+set sidescrolloff=4
 set smartcase
 set smartindent
 set smoothscroll
@@ -117,16 +116,15 @@ set wrap
 
 " map {{{
 
-nnoremap ` <c-w>
-nnoremap < <<
-nnoremap > >>
-nnoremap J <c-d>
-nnoremap K <c-u>
-nnoremap U :redo<cr>
+nnoremap <bs> "_dd
+nnoremap <s-bs> "_S<esc>
+nnoremap <cr> yyp
+nnoremap <s-cr> yyP
+nnoremap <tab> >>
+nnoremap <s-tab> <<
 
-nnoremap ,l :source ./
-nnoremap ,s :mksession ./
-nnoremap ,t :tabedit 
+nnoremap ` <c-w>
+nnoremap U :redo<cr>
 
 nnoremap [B :bfirst<cr>
 nnoremap ]B :blast<cr>
@@ -145,11 +143,12 @@ nnoremap [t :tabprevious<cr>
 nnoremap ]t :tabnext<cr>
 
 nnoremap <leader>C :let @/ = ""<cr>
-nnoremap <leader>G :Goyo<cr>
+nnoremap <leader>G :Goyo<cr>:setl cul!<cr>
 nnoremap <leader>L :setl list!<cr>
 nnoremap <leader>W :setl wrap!<cr>
 
 nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>c :Changes<cr>
 nnoremap <leader>d :exe 'Rg ' . expand('<cword>')<cr>
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>h :Helptags<cr>
@@ -158,8 +157,15 @@ nnoremap <leader>l :BLines<cr>
 nnoremap <leader>m :Marks<cr>
 nnoremap <leader>r :Rg<cr>
 nnoremap <leader>s :Snippets<cr>
+nnoremap <leader>t :Filetypes<cr>
 nnoremap <leader>u :UltiSnipsEdit<cr>
 nnoremap <leader>w :Windows<cr>
+
+nnoremap <leader>gb :BCommits<cr>
+nnoremap <leader>gc :Commits<cr>
+nnoremap <leader>gd :Git difftool<cr>
+nnoremap <leader>gf :GitFiles?<cr>
+nnoremap <leader>gg :Git<cr>
 
 " }}}
 
@@ -175,7 +181,5 @@ set t_Co=256
 colorscheme PaperColor
 
 filetype plugin indent on
-syntax enable
 
 " }}}
-
