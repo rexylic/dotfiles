@@ -25,6 +25,9 @@ call plug#end()
 
 " var {{{
 
+filetype plugin indent on
+syntax off
+
 let g:context_highlight_tag = '<hide>'
 
 let g:fzf_colors =
@@ -43,16 +46,13 @@ let g:fzf_colors =
 	\ 'header':  ['fg', 'Comment'] }
 let g:fzf_layout = 
 \ { 'window': { 'width': 0.8, 'height': 0.8, 'yoffset': 0.45 } }
+let g:fzf_vim = 
+\ { 'preview_window': ['right,50%,<80(up,40%)', 'ctrl-/'] }
 
-let g:fzf_vim = {}
-let g:fzf_vim.preview_window = ['right,50%,<80(up,40%)', 'ctrl-/']
-
-let g:goyo_width = "100"
+let g:goyo_width = "80"
 
 let g:mapleader = "\ "
 let g:maplocalleader = "\\"
-
-let g:pandoc#syntax#conceal#use = 0
 
 let g:vimtex_quickfix_ignore_filters = ['Overfull']
 
@@ -68,7 +68,6 @@ endif
 " opt {{{
 
 set backspace=eol,indent,start
-set background&
 set breakindent
 
 set colorcolumn=81,101,121
@@ -87,10 +86,7 @@ set lazyredraw
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 
 set nocompatible
-set noesckeys
-set noshowcmd
-set notimeout
-set nottimeout
+set noexpandtab
 set number
 
 set relativenumber
@@ -99,8 +95,8 @@ set scrolloff=9
 set shiftround
 set shiftwidth=0
 set shortmess+=aI
-set showcmd
 set sidescrolloff=4
+set signcolumn=yes
 set smartcase
 set smartindent
 set smoothscroll
@@ -139,12 +135,18 @@ nnoremap [c :cprevious<cr>
 nnoremap ]c :cnext<cr>
 nnoremap [h <c-t>
 nnoremap ]h <c-]>
+nnoremap [s :syntax off<cr>
+nnoremap ]s :syntax enable<cr>
 nnoremap [t :tabprevious<cr>
 nnoremap ]t :tabnext<cr>
+
+nnoremap <leader><bs> <nop>
 
 nnoremap <leader>C :let @/ = ""<cr>
 nnoremap <leader>G :Goyo<cr>:setl cul!<cr>
 nnoremap <leader>L :setl list!<cr>
+nnoremap <leader>S :syntax off<cr>
+nnoremap <leader>V :tabe ~/.vimrc<cr>
 nnoremap <leader>W :setl wrap!<cr>
 
 nnoremap <leader>b :Buffers<cr>
@@ -167,6 +169,8 @@ nnoremap <leader>gd :Git difftool<cr>
 nnoremap <leader>gf :GitFiles?<cr>
 nnoremap <leader>gg :Git<cr>
 
+inoremap ,, <esc>
+
 " }}}
 
 " theme {{{
@@ -179,7 +183,5 @@ endif
 
 set t_Co=256
 colorscheme PaperColor
-
-filetype plugin indent on
 
 " }}}

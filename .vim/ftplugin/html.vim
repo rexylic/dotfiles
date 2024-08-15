@@ -1,1 +1,1 @@
-set nowrap
+setl nowrap
