@@ -7,8 +7,6 @@ call plug#begin()
 
 	Plug 'lervag/vimtex'
 
-	Plug 'NLKNguyen/papercolor-theme'
-
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-repeat'
@@ -82,6 +80,7 @@ set hlsearch
 set incsearch
 set iskeyword-=_
 
+set laststatus=2
 set lazyredraw
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 
@@ -98,7 +97,6 @@ set shortmess+=aI
 set sidescrolloff=4
 set signcolumn=yes
 set smartcase
-set smartindent
 set smoothscroll
 set statusline=%f%M%R%=%l:%c\ %L
 
@@ -120,6 +118,7 @@ nnoremap <tab> >>
 nnoremap <s-tab> <<
 
 nnoremap ` <c-w>
+nnoremap , %
 nnoremap U :redo<cr>
 
 nnoremap [B :bfirst<cr>
@@ -159,15 +158,9 @@ nnoremap <leader>l :BLines<cr>
 nnoremap <leader>m :Marks<cr>
 nnoremap <leader>r :Rg<cr>
 nnoremap <leader>s :Snippets<cr>
-nnoremap <leader>t :Filetypes<cr>
+nnoremap <leader>t :Tags<cr>
 nnoremap <leader>u :UltiSnipsEdit<cr>
 nnoremap <leader>w :Windows<cr>
-
-nnoremap <leader>gb :BCommits<cr>
-nnoremap <leader>gc :Commits<cr>
-nnoremap <leader>gd :Git difftool<cr>
-nnoremap <leader>gf :GitFiles?<cr>
-nnoremap <leader>gg :Git<cr>
 
 inoremap ,, <esc>
 
@@ -181,7 +174,6 @@ else
 	set bg=dark
 endif
 
-set t_Co=256
-colorscheme PaperColor
+colorscheme wildcharm
 
 " }}}
