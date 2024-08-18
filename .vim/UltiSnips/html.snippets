@@ -10,27 +10,20 @@ snippet t "Tag"
 </$1>
 endsnippet
 
+snippet ta "Tag with Attribute"
+<${1:h2} $2>
+	$3
+</$1>
+endsnippet
+
 snippet i "Inline Tag"
 <${1:b}>$2</$1>
 endsnippet
 
-snippet h1 "Heading"
-<h1 id="$1">$2</h1>
+snippet ia "Inline Tag with Attribute"
+<${1:a} $2>$3</$1>
 endsnippet
 
-snippet h1l "Heading with Label"
-<h1 id="$1" label="$2">
-	$3
-</h1>
+snippet c "Self-closing tag"
+<${1:hr} />
 endsnippet
-
-snippet h2 "Subheading"
-<h2 id="$1">$2</h2>
-endsnippet
-
-snippet h2l "Subheading with Label"
-<h2 id="$1" label="$2">
-	$3
-</h2>
-endsnippet
-

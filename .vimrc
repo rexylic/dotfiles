@@ -23,9 +23,6 @@ call plug#end()
 
 " var {{{
 
-filetype plugin indent on
-syntax off
-
 let g:context_highlight_tag = '<hide>'
 
 let g:fzf_colors =
@@ -47,7 +44,7 @@ let g:fzf_layout =
 let g:fzf_vim = 
 \ { 'preview_window': ['right,50%,<80(up,40%)', 'ctrl-/'] }
 
-let g:goyo_width = "80"
+let g:goyo_width = "82"
 
 let g:mapleader = "\ "
 let g:maplocalleader = "\\"
@@ -65,6 +62,9 @@ endif
 
 " opt {{{
 
+filetype plugin indent on
+syntax on
+
 set backspace=eol,indent,start
 set breakindent
 
@@ -73,7 +73,6 @@ set cursorline
 
 set foldlevel=4
 set foldmethod=indent
-set formatoptions=
 
 set hlsearch
 
@@ -84,24 +83,26 @@ set laststatus=2
 set lazyredraw
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 
+set matchpairs+=<:>
+
 set nocompatible
 set noexpandtab
 set number
 
 set relativenumber
 
-set scrolloff=9
 set shiftround
 set shiftwidth=0
 set shortmess+=aI
+set showbreak=¶\ 
 set sidescrolloff=4
-set signcolumn=yes
 set smartcase
 set smoothscroll
 set statusline=%f%M%R%=%l:%c\ %L
 
 set tabstop=2
 set textwidth=80
+set ttimeoutlen=100
 
 set wildmenu
 set wrap
@@ -118,13 +119,14 @@ nnoremap <tab> >>
 nnoremap <s-tab> <<
 
 nnoremap ` <c-w>
-nnoremap , %
 nnoremap U :redo<cr>
 
 nnoremap [B :bfirst<cr>
 nnoremap ]B :blast<cr>
 nnoremap [C :cfirst<cr>
 nnoremap ]C :clast<cr>
+nnoremap [S :set bg=light<cr>
+nnoremap ]S :set bg=dark<cr>
 nnoremap [T :tabfirst<cr>
 nnoremap ]T :tablast<cr>
 
@@ -142,9 +144,10 @@ nnoremap ]t :tabnext<cr>
 nnoremap <leader><bs> <nop>
 
 nnoremap <leader>C :let @/ = ""<cr>
-nnoremap <leader>G :Goyo<cr>:setl cul!<cr>
+nnoremap <leader>G :Goyo<cr>
 nnoremap <leader>L :setl list!<cr>
 nnoremap <leader>S :syntax off<cr>
+nnoremap <leader>T :tabnew<cr>
 nnoremap <leader>V :tabe ~/.vimrc<cr>
 nnoremap <leader>W :setl wrap!<cr>
 
@@ -162,8 +165,6 @@ nnoremap <leader>t :Tags<cr>
 nnoremap <leader>u :UltiSnipsEdit<cr>
 nnoremap <leader>w :Windows<cr>
 
-inoremap ,, <esc>
-
 " }}}
 
 " theme {{{
@@ -175,5 +176,17 @@ else
 endif
 
 colorscheme wildcharm
+
+" }}}
+
+" au {{{
+
+function! CenterCursor()
+	let pos = getpos(".")
+	normal! zz
+	call setpos(".", pos)
+endfunction
+
+au CursorMoved,CursorMovedI * call CenterCursor()
 
 " }}}
