@@ -12,6 +12,13 @@ source <(fzf --zsh)
 
 # }}}
 
+# path {{{
+
+PATH+=/opt/homebrew/bin
+PATH+=/Library/TeX/texbin
+
+# }}}
+
 # var {{{
 
 PS1="%1~ %# "
@@ -20,7 +27,7 @@ EDITOR=vi
 VISUAL=micro
 PAGER=less
 
-export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='fd -I --type f'
 
 if type "dark-notify" > /dev/null; then
 	export VIMBG=$(dark-notify -e)
@@ -56,7 +63,11 @@ alias grs="git restore --staged"
 # fn {{{
 
 function pch {
-	pandoc $1 -o $2 -f markdown+header_attributes -t html --template archive/pandoc-template.html --mathjax --no-highlight
+	pandoc $1 -o $2\
+	 	-f markdown+header_attributes+footnotes\
+		-t html --template ~/Code/web/personal/archive/template.html\
+		--mathjax --no-highlight
+	tidy -iq -o $2 $2
 }
 
 # }}}

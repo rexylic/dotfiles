@@ -49,7 +49,8 @@ let g:goyo_width = "82"
 let g:mapleader = "\ "
 let g:maplocalleader = "\\"
 
-let g:vimtex_quickfix_ignore_filters = ['Overfull']
+let g:vimtex_mappings_prefix = '<localleader>'
+let g:vimtex_quickfix_ignore_filters = ['Overfull', 'float specifier']
 
 if has('python3')
 	let g:UltiSnipsEditSplit = "tabdo"
@@ -111,59 +112,68 @@ set wrap
 
 " map {{{
 
-nnoremap <bs> "_dd
-nnoremap <s-bs> "_S<esc>
-nnoremap <cr> yyp
-nnoremap <s-cr> yyP
-nnoremap <tab> >>
-nnoremap <s-tab> <<
+nn <bs> "_dd
+nn <s-bs> "_S<esc>
+nn <cr> yyp
+nn <s-cr> yyP
+nn <tab> >>
+nn <s-tab> <<
 
-nnoremap ` <c-w>
-nnoremap U :redo<cr>
+nn ` <c-w>
+nn U :redo<cr>
 
-nnoremap [B :bfirst<cr>
-nnoremap ]B :blast<cr>
-nnoremap [C :cfirst<cr>
-nnoremap ]C :clast<cr>
-nnoremap [S :set bg=light<cr>
-nnoremap ]S :set bg=dark<cr>
-nnoremap [T :tabfirst<cr>
-nnoremap ]T :tablast<cr>
+nn ,, <c-w>T
+nn ,[ :tabmove -<cr>
+nn ,] :tabmove +<cr>
+nn ,d :tabdo 
+nn ,e :tabedit 
+nn ,n :tabnew<cr>
+nn ,q :tabclose<cr>
+nn ,t :tab 
 
-nnoremap [b :bprevious<cr>
-nnoremap ]b :bnext<cr>
-nnoremap [c :cprevious<cr>
-nnoremap ]c :cnext<cr>
-nnoremap [h <c-t>
-nnoremap ]h <c-]>
-nnoremap [s :syntax off<cr>
-nnoremap ]s :syntax enable<cr>
-nnoremap [t :tabprevious<cr>
-nnoremap ]t :tabnext<cr>
+nn [B :bfirst<cr>
+nn ]B :blast<cr>
+nn [C :cfirst<cr>
+nn ]C :clast<cr>
+nn [S :set bg=light<cr>
+nn ]S :set bg=dark<cr>
+nn [T :tabfirst<cr>
+nn ]T :tablast<cr>
 
-nnoremap <leader><bs> <nop>
+nn [b :bprevious<cr>
+nn ]b :bnext<cr>
+nn [c :cprevious<cr>
+nn ]c :cnext<cr>
+nn [h <c-t>
+nn ]h <c-]>
+nn [s :syntax off<cr>
+nn ]s :syntax enable<cr>
+nn [t :tabprevious<cr>
+nn ]t :tabnext<cr>
 
-nnoremap <leader>C :let @/ = ""<cr>
-nnoremap <leader>G :Goyo<cr>
-nnoremap <leader>L :setl list!<cr>
-nnoremap <leader>S :syntax off<cr>
-nnoremap <leader>T :tabnew<cr>
-nnoremap <leader>V :tabe ~/.vimrc<cr>
-nnoremap <leader>W :setl wrap!<cr>
+nn <leader><bs> <nop>
 
-nnoremap <leader>b :Buffers<cr>
-nnoremap <leader>c :Changes<cr>
-nnoremap <leader>d :exe 'Rg ' . expand('<cword>')<cr>
-nnoremap <leader>f :Files<cr>
-nnoremap <leader>h :Helptags<cr>
-nnoremap <leader>j :Jumps<cr>
-nnoremap <leader>l :BLines<cr>
-nnoremap <leader>m :Marks<cr>
-nnoremap <leader>r :Rg<cr>
-nnoremap <leader>s :Snippets<cr>
-nnoremap <leader>t :Tags<cr>
-nnoremap <leader>u :UltiSnipsEdit<cr>
-nnoremap <leader>w :Windows<cr>
+nn <leader>C :let @/ = ""<cr>
+nn <leader>L :setl list!<cr>
+nn <leader>S :syntax off<cr>
+nn <leader>V :tabe ~/.vimrc<cr>
+nn <leader>W :setl wrap!<cr>
+
+nn <leader>b :Buffers<cr>
+nn <leader>c :Changes<cr>
+nn <leader>d :exe 'Rg ' . expand('<cword>')<cr>
+nn <leader>f :Files<cr>
+nn <leader>g :Goyo<cr>
+nn <leader>h :Helptags<cr>
+nn <leader>j :Jumps<cr>
+nn <leader>l :BLines<cr>
+nn <leader>m :Marks<cr>
+nn <leader>r :Rg<cr>
+nn <leader>s :Snippets<cr>
+nn <leader>t :Tags<cr>
+nn <leader>u :UltiSnipsEdit<cr>
+nn <leader>v :tabe ~/.vim/after/ftplugin/<C-r>=&filetype<cr>.vim<cr>
+nn <leader>w :Windows<cr>
 
 " }}}
 
