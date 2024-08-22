@@ -11,13 +11,6 @@ source <(fzf --zsh)
 
 # }}}
 
-# path {{{
-
-PATH+=/opt/homebrew/bin
-PATH+=/Library/TeX/texbin
-
-# }}}
-
 # var {{{
 
 PS1="%1~ %# "
@@ -28,14 +21,20 @@ PAGER=less
 
 export FZF_DEFAULT_COMMAND='fd -I --type f'
 
+# }}}
+
+# theme {{{
+
 if type "dark-notify" > /dev/null; then
 	export VIMBG=$(dark-notify -e)
 fi
 
-if [ "$VIMBG" = "dark" ]; then
-	sed -i '' 's/latte/mocha/' ~/.config/alacritty/alacritty.toml
+ALACRITTY_CONFIG=~/.config/alacritty/alacritty.toml
+
+if [ $VIMBG = "dark" ]; then
+	sed -i '1' 's/latte/mocha/' $ALACRITTY_CONFIG
 else
-	sed -i '' 's/mocha/latte/' ~/.config/alacritty/alacritty.toml
+	sed -i '1' 's/mocha/latte/' $ALACRITTY_CONFIG
 fi
 
 # }}}
@@ -74,6 +73,10 @@ function pch {
 		-t html --template ~/Code/web/personal/archive/template.html\
 		--mathjax --no-highlight
 	tidy -iq -o $2 $2
+}
+
+function af {
+	alacritty msg config "font.size = $1"
 }
 
 # }}}

@@ -193,6 +193,7 @@ nn <leader>w :Windows<cr>
 
 if $VIMBG[0] == 'l' " set with dark-notify -e
 	call LightTheme()
+	hi CursorLine guibg=#E3E6EB
 else
 	call DarkTheme()
 endif

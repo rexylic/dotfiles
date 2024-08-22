@@ -1,4 +1,4 @@
-import = [ "~/.config/alacritty/catppuccin-mocha.toml" ]
+import = [ "~/.config/alacritty/catppuccin-latte.toml" ]
 
 [window]
 dimensions = { columns = 90, lines = 40 }
@@ -10,6 +10,6 @@ option_as_alt = "OnlyLeft"
 normal = { family = "Pragmata", style = "Regular" }
 bold = { family = "Pragmata", style = "Bold" }
 italic = { family = "Pragmata", style = "Italic" }
-bold_italic = { family = "Pragmata", style = "Bold Italic" }
+bold_italic = { family = "Pragmata", style = "Regular Italic" }
 size = 14
 builtin_box_drawing = true
