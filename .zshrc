@@ -32,9 +32,9 @@ fi
 ALACRITTY_CONFIG=~/.config/alacritty/alacritty.toml
 
 if [ $VIMBG = "dark" ]; then
-	sed -i '1' 's/latte/mocha/' $ALACRITTY_CONFIG
+	sed -i '1' 's/light/dark/' $ALACRITTY_CONFIG
 else
-	sed -i '1' 's/mocha/latte/' $ALACRITTY_CONFIG
+	sed -i '1' 's/dark/light/' $ALACRITTY_CONFIG
 fi
 
 # }}}

@@ -9,6 +9,8 @@ call plug#begin()
 
 	Plug 'lervag/vimtex'
 
+	Plug 'NLKNguyen/papercolor-theme'
+
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-repeat'
@@ -69,7 +71,6 @@ set backspace=eol,indent,start
 set breakindent
 
 set colorcolumn=81,101,121
-set cursorline
 
 set foldlevel=4
 set foldmethod=indent
@@ -119,12 +120,12 @@ endfunction
 
 function! LightTheme()
 	set bg=light
-	colorscheme catppuccin_latte
+	colorscheme PaperColor
 endfunction
 
 function! DarkTheme()
 	set bg=dark
-	colorscheme catppuccin_mocha
+	colorscheme PaperColor
 endfunction
 
 " }}}
@@ -193,7 +194,6 @@ nn <leader>w :Windows<cr>
 
 if $VIMBG[0] == 'l' " set with dark-notify -e
 	call LightTheme()
-	hi CursorLine guibg=#E3E6EB
 else
 	call DarkTheme()
 endif

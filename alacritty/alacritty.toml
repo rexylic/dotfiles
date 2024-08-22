@@ -1,4 +1,4 @@
-import = [ "~/.config/alacritty/catppuccin-latte.toml" ]
+import = [ "~/.config/alacritty/papercolor_light.toml" ]
 
 [window]
 dimensions = { columns = 90, lines = 40 }
@@ -12,4 +12,3 @@ bold = { family = "Pragmata", style = "Bold" }
 italic = { family = "Pragmata", style = "Italic" }
 bold_italic = { family = "Pragmata", style = "Regular Italic" }
 size = 14
-builtin_box_drawing = true
