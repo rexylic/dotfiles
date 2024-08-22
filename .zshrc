@@ -1,6 +1,5 @@
 # pre {{{
 
-source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 if type brew &>/dev/null; then
@@ -33,6 +32,12 @@ if type "dark-notify" > /dev/null; then
 	export VIMBG=$(dark-notify -e)
 fi
 
+if [ "$VIMBG" = "dark" ]; then
+	sed -i '' 's/latte/mocha/' ~/.config/alacritty/alacritty.toml
+else
+	sed -i '' 's/mocha/latte/' ~/.config/alacritty/alacritty.toml
+fi
+
 # }}}
 
 # alias {{{
@@ -53,6 +58,7 @@ alias gco="git checkout"
 alias gd="git diff"
 alias gl="git log"
 alias gm="git merge"
+alias gr="git restore"
 alias gpl="git pull"
 alias gps="git push"
 alias gs="git status"

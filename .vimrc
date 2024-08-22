@@ -1,6 +1,8 @@
 " plug {{{
 
 call plug#begin()
+	Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/goyo.vim'
@@ -63,9 +65,6 @@ endif
 
 " opt {{{
 
-filetype plugin indent on
-syntax on
-
 set backspace=eol,indent,start
 set breakindent
 
@@ -88,7 +87,6 @@ set matchpairs+=<:>
 
 set nocompatible
 set noexpandtab
-set number
 
 set relativenumber
 
@@ -102,11 +100,32 @@ set smoothscroll
 set statusline=%f%M%R%=%l:%c\ %L
 
 set tabstop=2
+set termguicolors
 set textwidth=80
 set ttimeoutlen=100
 
 set wildmenu
 set wrap
+
+" }}}
+
+" fn {{{
+
+function! CenterCursor()
+	let pos = getpos(".")
+	normal! zz
+	call setpos(".", pos)
+endfunction
+
+function! LightTheme()
+	set bg=light
+	colorscheme catppuccin_latte
+endfunction
+
+function! DarkTheme()
+	set bg=dark
+	colorscheme catppuccin_mocha
+endfunction
 
 " }}}
 
@@ -120,23 +139,15 @@ nn <tab> >>
 nn <s-tab> <<
 
 nn ` <c-w>
+nn , :tabnew<cr>
 nn U :redo<cr>
-
-nn ,, <c-w>T
-nn ,[ :tabmove -<cr>
-nn ,] :tabmove +<cr>
-nn ,d :tabdo 
-nn ,e :tabedit 
-nn ,n :tabnew<cr>
-nn ,q :tabclose<cr>
-nn ,t :tab 
 
 nn [B :bfirst<cr>
 nn ]B :blast<cr>
 nn [C :cfirst<cr>
 nn ]C :clast<cr>
-nn [S :set bg=light<cr>
-nn ]S :set bg=dark<cr>
+nn [S :call LightTheme()<cr>
+nn ]S :call DarkTheme()<cr>
 nn [T :tabfirst<cr>
 nn ]T :tablast<cr>
 
@@ -155,6 +166,7 @@ nn <leader><bs> <nop>
 
 nn <leader>C :let @/ = ""<cr>
 nn <leader>L :setl list!<cr>
+nn <leader>N :setl rnu! cul! cuc!<cr>
 nn <leader>S :syntax off<cr>
 nn <leader>V :tabe ~/.vimrc<cr>
 nn <leader>W :setl wrap!<cr>
@@ -180,22 +192,14 @@ nn <leader>w :Windows<cr>
 " theme {{{
 
 if $VIMBG[0] == 'l' " set with dark-notify -e
-	set bg=light
+	call LightTheme()
 else
-	set bg=dark
+	call DarkTheme()
 endif
-
-colorscheme wildcharm
 
 " }}}
 
 " au {{{
-
-function! CenterCursor()
-	let pos = getpos(".")
-	normal! zz
-	call setpos(".", pos)
-endfunction
 
 au CursorMoved,CursorMovedI * call CenterCursor()
 
