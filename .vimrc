@@ -7,6 +7,8 @@ call plug#begin()
 	Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/goyo.vim'
 
+	Plug 'keith/swift.vim'
+
 	Plug 'lervag/vimtex'
 
 	Plug 'NLKNguyen/papercolor-theme'
@@ -53,8 +55,28 @@ let g:goyo_width = "82"
 let g:mapleader = "\ "
 let g:maplocalleader = "\\"
 
+let g:PaperColor_Theme_Options = {
+	\   'language': {
+	\     'python': {
+	\       'highlight_builtins' : 1
+	\     },
+	\     'cpp': {
+	\       'highlight_standard_library': 1
+	\     },
+	\     'c': {
+	\       'highlight_builtins' : 1
+	\     }
+	\   },
+	\		'theme': {
+	\			'default': {
+	\				'allow_bold': 1,
+	\				'allow_italic': 1,
+	\			}
+	\		}
+	\ }
+
 let g:vimtex_mappings_prefix = '<localleader>'
-let g:vimtex_quickfix_ignore_filters = ['Overfull', 'float specifier']
+let g:vimtex_quickfix_ignore_filters = ['Warning', 'Overfull', 'float specifier']
 
 if has('python3')
 	let g:UltiSnipsEditSplit = "tabdo"
@@ -67,10 +89,13 @@ endif
 
 " opt {{{
 
+set autoindent
+
 set backspace=eol,indent,start
 set breakindent
 
 set colorcolumn=81,101,121
+set cursorline
 
 set foldlevel=4
 set foldmethod=indent
@@ -164,6 +189,7 @@ nn [t :tabprevious<cr>
 nn ]t :tabnext<cr>
 
 nn <leader><bs> <nop>
+nn <leader>, :echo synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')<cr>
 
 nn <leader>C :let @/ = ""<cr>
 nn <leader>L :setl list!<cr>
@@ -192,6 +218,7 @@ nn <leader>w :Windows<cr>
 
 " theme {{{
 
+set t_Co=256
 if $VIMBG[0] == 'l' " set with dark-notify -e
 	call LightTheme()
 else
