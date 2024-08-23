@@ -4,20 +4,14 @@ call plug#begin()
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/goyo.vim'
-
-	Plug 'keith/swift.vim'
-
+	Plug 'junegunn/vim-easy-align'
 	Plug 'lervag/vimtex'
-
 	Plug 'NLKNguyen/papercolor-theme'
-
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-surround'
-
 	Plug 'wellle/context.vim'
-
 	if has('python3')
 		Plug 'SirVer/ultisnips'
 	endif
@@ -163,7 +157,6 @@ nn <tab> >>
 nn <s-tab> <<
 
 nn ` <c-w>
-nn , :tabnew<cr>
 nn U :redo<cr>
 
 nn [B :bfirst<cr>
@@ -191,11 +184,12 @@ nn <leader>, :echo synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')<
 
 nn <leader>C :let @/ = ""<cr>
 nn <leader>L :setl list!<cr>
+nn <leader>T :tabnew<cr>
 nn <leader>V :tabe ~/.vimrc<cr>
 nn <leader>W :setl wrap!<cr>
 
 nn <leader>b :Buffers<cr>
-nn <leader>c :Changes<cr>
+nn <leader>c :Commits<cr>
 nn <leader>d :exe 'Rg ' . expand('<cword>')<cr>
 nn <leader>f :Files<cr>
 nn <leader>h :Helptags<cr>
@@ -208,6 +202,9 @@ nn <leader>t :Tags<cr>
 nn <leader>u :UltiSnipsEdit<cr>
 nn <leader>v :tabe ~/.vim/after/ftplugin/<C-r>=&filetype<cr>.vim<cr>
 nn <leader>w :Windows<cr>
+
+xmap , <plug>(EasyAlign)
+nmap , <plug>(EasyAlign)
 
 " }}}
 
