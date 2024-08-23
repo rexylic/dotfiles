@@ -1,0 +1,39 @@
+theme = "papercolor-light"
+
+[editor]
+scrolloff = 9
+line-number = "relative"
+true-color = true
+undercurl = true
+rulers = [81, 101, 121]
+bufferline = "multiple"
+color-modes = true
+popup-border = "all"
+
+[editor.statusline]
+left = ["version-control", "spinner", "workspace-diagnostics"]
+center = ["file-name", "file-modification-indicator"]
+right = ["position", "total-line-numbers"]
+mode.normal = "N"
+mode.insert = "I"
+mode.select = "S"
+
+[editor.lsp]
+display-messages = true
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+[editor.auto-save]
+focus-lost = true
+
+[editor.indent-guides]
+render = true
+character = "┆"
+
+[keys.normal]
+"r" = "replace_with_yanked"
+"R" = "replace"
+"`" = "switch_to_lowercase"
+"~" = "switch_to_uppercase"
