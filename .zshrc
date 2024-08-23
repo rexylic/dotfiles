@@ -75,10 +75,6 @@ function pch {
 	tidy -iq -o $2 $2
 }
 
-function af {
-	alacritty msg config "font.size = $1"
-}
-
 # }}}
 
 # prompt {{{

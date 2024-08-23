@@ -1,4 +1,4 @@
-import = [ "~/.config/alacritty/papercolor_dark.toml" ]
+import = [ "~/.config/alacritty/papercolor_light.toml" ]
 
 [window]
 dimensions = { columns = 100, lines = 50 }
@@ -10,5 +10,5 @@ option_as_alt = "OnlyLeft"
 normal = { family = "Pragmata", style = "Regular" }
 bold = { family = "Pragmata", style = "Bold" }
 italic = { family = "Pragmata", style = "Italic" }
-bold_italic = { family = "Pragmata", style = "Regular Italic" }
-size = 14
+bold_italic = { family = "Pragmata", style = "Bold Italic" }
+size = 14.5

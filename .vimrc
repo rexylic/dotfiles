@@ -1,8 +1,6 @@
 " plug {{{
 
 call plug#begin()
-	Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/goyo.vim'
@@ -193,8 +191,6 @@ nn <leader>, :echo synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')<
 
 nn <leader>C :let @/ = ""<cr>
 nn <leader>L :setl list!<cr>
-nn <leader>N :setl rnu! cul! cuc!<cr>
-nn <leader>S :syntax off<cr>
 nn <leader>V :tabe ~/.vimrc<cr>
 nn <leader>W :setl wrap!<cr>
 
@@ -202,7 +198,6 @@ nn <leader>b :Buffers<cr>
 nn <leader>c :Changes<cr>
 nn <leader>d :exe 'Rg ' . expand('<cword>')<cr>
 nn <leader>f :Files<cr>
-nn <leader>g :Goyo<cr>
 nn <leader>h :Helptags<cr>
 nn <leader>j :Jumps<cr>
 nn <leader>l :BLines<cr>
