@@ -8,7 +8,7 @@ option_as_alt = "OnlyLeft"
 
 [font]
 normal = { family = "Pragmata", style = "Regular" }
-bold = { family = "Pragmata", style = "Bold" }
+bold = { family = "Pragmata Retro", style = "Regular" }
 italic = { family = "Pragmata", style = "Italic" }
-bold_italic = { family = "Pragmata", style = "Bold Italic" }
+bold_italic = { family = "Pragmata Retro", style = "Italic" }
 size = 14.5
