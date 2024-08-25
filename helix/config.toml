@@ -35,5 +35,6 @@ character = "┆"
 [keys.normal]
 "r" = "replace_with_yanked"
 "R" = "replace"
+"X" = "extend_line_above"
 "`" = "switch_to_lowercase"
 "~" = "switch_to_uppercase"

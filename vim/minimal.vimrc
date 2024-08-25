@@ -1,40 +1,46 @@
-syntax off
+sy off
+colo quiet
 
 let g:mapleader = "\ "
 let g:maplocalleader = "\\"
 
-set ai bs=eol,indent,start bri cc=81,101,121 hls is isk-=_ ls=2 lz
-set lcs=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:· mps+=<:> nocp noet
-set sr sw=0 shm+=aI sbr=¶\ siso=4 scs sms stl=%f%M%R%=%l:%c\ %L ts=2
-set tw=80 wmnu wrap
+let g:fzf_layout = 
+\ { 'window': { 'width': 0.8, 'height': 0.8, 'yoffset': 0.45 } }
+let g:fzf_vim = 
+\ { 'preview_window': ['right,50%,<80(up,40%)', 'ctrl-/'] }
+
+set ai bri cc=81,101,121 is isk-=_ ls=2 lz nocp noet rnu sc sr sw=0 shm+=aI 
+set sbr=¶\  siso=4 scs sms stl=%f%M%=%B@%-02c\ %-04l/%L t_Co=1 ts=2 tw=80 wmnu
 
 nn ` <c-w>
-nn U :redo<cr>
+nn ~ ~h
+nn - <Nop>
+nn _ :tabc<CR>
+nn + :tabe<CR>
+nn U :redo<CR>
+nn [ :bprevious<CR>
+nn ] :bnext<CR>
 
-nn [T :tabfirst<cr>
-nn ]T :tablast<cr>
-nn [b :bprevious<cr>
-nn ]b :bnext<cr>
-nn [c :cprevious<cr>
-nn ]c :cnext<cr>
-nn [h <c-t>
-nn ]h <c-]>
-nn [t :tabprevious<cr>
-nn ]t :tabnext<cr>
+nn <Up> :cprevious<CR>
+nn <Down> :cnext<CR>
+nn <Left> :tabprevious<CR>
+nn <Right> :tabnext<CR>
 
-nn <leader><bs> <nop>
-nn <leader>c :tabe ~/.vimrc<cr>
-nn <leader>s :let @/ = ""<cr>
-nn <leader>v :tabe ~/.vim/after/ftplugin/<C-r>=&filetype<cr>.vim<cr>
-nn <leader>w :setl wrap!<cr>
+nn <Leader>b :Buffers<CR>
+nn <Leader>d :exe 'Rg ' . expand('<cword>')<CR>
+nn <Leader>c :let @/ = ""<CR>
+nn <Leader>f :Files<CR>
+nn <Leader>h :Helptags<CR>
+nn <Leader>j :Jumps<CR>
+nn <Leader>l :BLines<CR>
+nn <Leader>m :Marks<CR>
+nn <Leader>r :Rg<CR>
+nn <Leader>t :Tags<CR>
+nn <Leader>v :tabe ~/.vim/after/ftplugin/<C-r>=&filetype<CR>.vim<CR>
 
-function! CenterCursor()
+fu! CenterCursor()
 	let pos = getpos(".")
-	normal! zz
-	call setpos(".", pos)
-endfunction
-
-au CursorMoved,CursorMovedI * call CenterCursor()
-
-set t_Co=1
-colorscheme quiet
+	norm! zz
+	cal setpos(".", pos)
+endf
+au CursorMoved,CursorMovedI * cal CenterCursor()

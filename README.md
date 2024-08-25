@@ -6,5 +6,3 @@ My configuration files.
 
 'Cause I ended up spending days tweaking my configs. 
 Customizability is a trap. 
-
-
