@@ -1,17 +1,8 @@
-# pre {{{
-
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
 if type brew &>/dev/null; then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
   autoload -Uz compinit; compinit
 fi
-
-source <(fzf --zsh)
-
-# }}}
-
-# var {{{
 
 PS1="%1~ %# "
 PURE_PROMPT_SYMBOL=$
@@ -19,27 +10,20 @@ EDITOR=vi
 VISUAL=micro
 PAGER=less
 
+source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+source <(fzf --zsh)
 export FZF_DEFAULT_COMMAND='fd -I --type f'
 
-# }}}
-
-# theme {{{
-
-if type "dark-notify" > /dev/null; then
-	export VIMBG=$(dark-notify -e)
-fi
-
 ALACRITTY_CONFIG=~/.config/alacritty/alacritty.toml
+HELIX_CONFIG=~/.config/helix/config.toml
 
-if [ $VIMBG = "dark" ]; then
-	sed -i '1' 's/light/dark/' $ALACRITTY_CONFIG
+export BG=$(dark-notify -e)
+if [ $BG = "dark" ]; then
+	sed -i '1' 's/light/dark/' $ALACRITTY_CONFIG $HELIX_CONFIG
 else
-	sed -i '1' 's/dark/light/' $ALACRITTY_CONFIG
+	sed -i '1' 's/dark/light/' $ALACRITTY_CONFIG $HELIX_CONFIG
 fi
-
-# }}}
-
-# alias {{{
 
 alias bf="brew info"
 alias bi="brew install"
@@ -51,8 +35,8 @@ alias bui="brew uninstall"
 
 alias ga="git add"
 alias gb="git branch"
-alias gcl="git clome"
-alias gcm="git commit"
+alias gcl="git clone"
+alias gcm="git commit -m"
 alias gco="git checkout"
 alias gd="git diff"
 alias gl="git log"
@@ -61,11 +45,8 @@ alias gr="git restore"
 alias gpl="git pull"
 alias gps="git push"
 alias gs="git status"
+alias gsm="git submodule"
 alias grs="git restore --staged"
-
-# }}}
-
-# fn {{{
 
 function pch {
 	pandoc $1 -o $2\
@@ -75,11 +56,5 @@ function pch {
 	tidy -iq -o $2 $2
 }
 
-# }}}
-
-# prompt {{{
-
 autoload -U promptinit; promptinit
 prompt pure
-
-# }}}
