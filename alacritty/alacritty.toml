@@ -1,4 +1,4 @@
-import = [ "~/.config/alacritty/papercolor_light.toml" ]
+import = [ "~/.config/alacritty/wildcharm_light.toml" ]
 
 [window]
 dimensions = { columns = 100, lines = 50 }
