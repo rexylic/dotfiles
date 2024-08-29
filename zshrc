@@ -16,13 +16,12 @@ source <(fzf --zsh)
 export FZF_DEFAULT_COMMAND='fd -I --type f'
 
 ALACRITTY_CONFIG=~/.config/alacritty/alacritty.toml
-HELIX_CONFIG=~/.config/helix/config.toml
 
 export BG=$(dark-notify -e)
 if [ $BG = "dark" ]; then
-	sed -i '1' 's/light/dark/' $ALACRITTY_CONFIG $HELIX_CONFIG
+	sed -i '1' 's/light/dark/' $ALACRITTY_CONFIG
 else
-	sed -i '1' 's/dark/light/' $ALACRITTY_CONFIG $HELIX_CONFIG
+	sed -i '1' 's/dark/light/' $ALACRITTY_CONFIG
 fi
 
 alias bf="brew info"
@@ -52,7 +51,7 @@ function pch {
 	pandoc $1 -o $2\
 	 	-f markdown+header_attributes+footnotes\
 		-t html --template ~/Code/web/personal/archive/template.html\
-		--mathjax --no-highlight
+		--mathjax --no-highlight --quiet
 	tidy -iq -o $2 $2
 }
 
