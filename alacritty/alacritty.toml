@@ -1,4 +1,4 @@
-import = [ "~/.config/alacritty/wildcharm_dark.toml" ]
+import = [ "~/.config/alacritty/wildcharm_light.toml" ]
 
 [window]
 dimensions = { columns = 100, lines = 50 }
@@ -11,4 +11,5 @@ normal = { family = "Pragmata", style = "Regular" }
 bold = { family = "Pragmata Retro", style = "Regular" }
 italic = { family = "Pragmata", style = "Italic" }
 bold_italic = { family = "Pragmata Retro", style = "Italic" }
-size = 14.7
+size = 14.5
+offset = { x = 0, y = 1 }
