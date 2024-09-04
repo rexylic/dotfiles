@@ -1,7 +1,7 @@
 import = [ "~/.config/alacritty/wildcharm_light.toml" ]
 
 [window]
-dimensions = { columns = 80, lines = 25 }
+dimensions = { columns = 80, lines = 30 }
 padding = { x = 12, y = 12 }
 dynamic_padding = true
 option_as_alt = "OnlyLeft"
