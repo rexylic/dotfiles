@@ -2,7 +2,7 @@ import = [ "~/.config/alacritty/wildcharm_light.toml" ]
 
 [window]
 dimensions = { columns = 80, lines = 30 }
-padding = { x = 12, y = 12 }
+padding = { x = 10, y = 10 }
 dynamic_padding = true
 option_as_alt = "OnlyLeft"
 
@@ -11,4 +11,4 @@ normal = { family = "Pragmata", style = "Regular" }
 bold = { family = "Pragmata", style = "Bold" }
 italic = { family = "Pragmata", style = "Italic" }
 bold_italic = { family = "Pragmata", style = "Bold Italic" }
-size = 14.7
+size = 14.5

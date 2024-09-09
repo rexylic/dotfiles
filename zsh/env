@@ -1,7 +1,5 @@
 PS1="%1~ %# "
-PURE_PROMPT_SYMBOL=$
 EDITOR=vi
 VISUAL=micro
 PAGER=less
 ALACRITTY_CONFIG=~/.config/alacritty/alacritty.toml
-export NO_COLOR

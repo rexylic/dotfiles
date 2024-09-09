@@ -12,7 +12,7 @@ alias bis="brew install"
 alias bisc="brew install --cask"
 alias bl="brew list"
 alias bs="brew search"
-alias bubu="brew update && brew upgrade"
+alias bu="brew update && brew upgrade"
 alias bui="brew uninstall"
 
 alias ga="git add"
