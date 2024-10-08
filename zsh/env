@@ -3,3 +3,4 @@ EDITOR=vi
 VISUAL=micro
 PAGER=less
 ALACRITTY_CONFIG=~/.config/alacritty/alacritty.toml
+. "$HOME/.cargo/env"

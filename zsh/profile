@@ -5,6 +5,8 @@ if type brew &>/dev/null; then
 fi
 
 source <(fzf --zsh)
+. "$HOME/.cargo/env"
+
 export FZF_DEFAULT_COMMAND='fd -I --type f'
 
 alias bi="brew info"
@@ -30,6 +32,11 @@ alias gs="git status"
 alias gsm="git submodule"
 alias gsmurr="git submodule update --recursive --remote"
 alias grs="git restore --staged"
+
+function gac {
+  git add $1
+  git commit -m $2
+}
 
 function pch {
 	pandoc $1 -o $2\
