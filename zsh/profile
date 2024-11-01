@@ -28,10 +28,12 @@ alias gm="git merge"
 alias gr="git restore"
 alias gpl="git pull"
 alias gps="git push"
-alias gs="git status"
+alias gst="git status"
 alias gsm="git submodule"
 alias gsmurr="git submodule update --recursive --remote"
 alias grs="git restore --staged"
+
+alias nlp="cp ~/Code/tex/archive/* ."
 
 function gac {
   git add $1
