@@ -34,6 +34,7 @@ alias gsmurr="git submodule update --recursive --remote"
 alias grs="git restore --staged"
 
 alias nlp="cp ~/Code/tex/archive/* ."
+alias pyv="python3 -m venv ~/Code/py/; source ~/Code/py/bin/activate"
 
 function gac {
   git add $1
@@ -44,7 +45,6 @@ function pch {
 	pandoc $1 -o $2\
 	 	-f markdown+header_attributes+footnotes\
 		-t html --template ~/Code/web/personal/archive/template.html\
-		--mathjax --no-highlight --quiet
-	tidy -i -q -o $2 $2 
+		--no-highlight --mathjax
 }
 

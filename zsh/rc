@@ -7,3 +7,5 @@ fi
 
 autoload -U promptinit; promptinit
 prompt pure
+
+unset zle_bracketed_paste
