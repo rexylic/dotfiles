@@ -1,5 +1,5 @@
 [general]
-import = [ "~/.config/alacritty/wildcharm_dark.toml" ]
+import = [ "~/.config/alacritty/wildcharm_light.toml" ]
 
 [window]
 dimensions = { columns = 90, lines = 40 }

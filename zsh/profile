@@ -46,5 +46,6 @@ function pch {
 	 	-f markdown+header_attributes+footnotes\
 		-t html --template ~/Code/web/personal/archive/template.html\
 		--no-highlight --mathjax
+	tidy --indent-spaces 4 -i -q -o $2 $2
 }
 
