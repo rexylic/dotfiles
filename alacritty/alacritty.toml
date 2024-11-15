@@ -1,15 +1,15 @@
 [general]
-import = [ "~/.config/alacritty/everforest_dark.toml" ]
+import = [ "~/.config/alacritty/wildcharm_light.toml" ]
 
 [window]
-dimensions = { columns = 90, lines = 40 }
-padding = { x = 12, y = 12 }
+dimensions      = { columns = 90, lines = 40 }
 dynamic_padding = true
-option_as_alt = "OnlyLeft"
+option_as_alt   = "OnlyLeft"
+padding         = { x = 12, y = 12 }
 
 [font]
-normal = { family = "Pragmata", style = "Regular" }
-bold = { family = "Pragmata", style = "Bold" }
-italic = { family = "Pragmata", style = "Italic" }
+bold        = { family = "Pragmata", style = "Bold" }
 bold_italic = { family = "Pragmata", style = "Bold Italic" }
-size = 14.5
+italic      = { family = "Pragmata", style = "Italic" }
+normal      = { family = "Pragmata", style = "Regular" }
+size        = 14.5
