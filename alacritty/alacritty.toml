@@ -1,5 +1,5 @@
 [general]
-import = [ "~/.config/alacritty/wildcharm_light.toml" ]
+import = [ "~/.config/alacritty/nord.toml" ]
 
 [window]
 dimensions      = { columns = 90, lines = 40 }
@@ -12,4 +12,5 @@ bold        = { family = "Pragmata", style = "Bold" }
 bold_italic = { family = "Pragmata", style = "Bold Italic" }
 italic      = { family = "Pragmata", style = "Italic" }
 normal      = { family = "Pragmata", style = "Regular" }
-size        = 14.5
+offset      = { x = -1, y = -1 }
+size        = 15
