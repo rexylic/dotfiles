@@ -66,4 +66,4 @@ decorations     = "Buttonless"
 dimensions      = { columns = 90, lines = 40 }
 dynamic_padding = true
 option_as_alt   = "OnlyLeft"
-padding         = { x = 12, y = 12 }
+padding         = { x = 16, y = 16 }
