@@ -1,5 +1,5 @@
 [general]
-import = [ '~/.config/alacritty/wildcharm_dark.toml' ]
+import = [ '~/.config/alacritty/nord.toml' ]
 
 [font]
 bold        = { family = "Pragmata", style = "Bold" }
