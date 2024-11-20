@@ -1,14 +1,17 @@
+[general]
+import = [ "~/.config/alacritty/nord.toml" ]
+
 [font]
 bold        = { family = "Pragmata", style = "Bold" }
 bold_italic = { family = "Pragmata", style = "Bold Italic" }
 italic      = { family = "Pragmata", style = "Italic" }
 normal      = { family = "Pragmata", style = "Regular" }
-size        = 15
+size        = 14
 offset      = { x = -1, y = 0 }
 
 [window]
 decorations     = "Buttonless"
-dimensions      = { columns = 90, lines = 40 }
+dimensions      = { columns = 85, lines = 35 }
 dynamic_padding = true
 option_as_alt   = "OnlyLeft"
 padding         = { x = 16, y = 16 }

@@ -34,6 +34,7 @@ alias gsmurr="git submodule update --recursive --remote"
 alias grs="git restore --staged"
 
 alias nlp="cp ~/Code/tex/archive/* ."
+alias nv="nvim"
 alias pyv="python3 -m venv ~/Code/py/; source ~/Code/py/bin/activate"
 
 function gac {
