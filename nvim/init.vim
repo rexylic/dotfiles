@@ -4,33 +4,48 @@ let g:vimtex_mappings_prefix = '<localleader>'
 let g:vimtex_indent_lists = []
 let g:vimtex_quickfix_ignore_filters = ['[Ww]arning', 'hbox']
 
-nnoremap ` <C-w>
-nnoremap = gqip
+nn ` <C-w>
+nn - :tabn<CR>
+nn _ :tabclose<CR>
+nn + :tabnew<CR>
+nn , :bn<CR>
 
-nnoremap <Left>  :tabp<CR>
-nnoremap <Right> :tabn<CR>
-nnoremap <Up>    :bp<CR>
-nnoremap <Down>  :bn<CR>
+nn [t :tabp<CR>
+nn ]t :tabn<CR>
 
-nnoremap ,d :Telescope lsp_definitions<CR>
-nnoremap ,r :Telescope lsp_references<CR>
-nnoremap ,s :Telescope lsp_dynamic_workspace_symbols<CR>
-nnoremap ,t :Telescope lsp_type_definitions<CR>
+nn <Leader>B :Pick git_branches<CR>
+nn <Leader>C :Pick git_commits<CR>
+nn <Leader>L :Lazy<CR>
+nn <Leader>M :Mason<CR>
+nn <Leader>b :Pick buffers<CR>
+nn <Leader>c :Pick commands<CR>
+nn <Leader>d :Pick diagnostic<CR>
+nn <Leader>e :lua MiniFiles.open()<CR>
+nn <Leader>f :Pick files<CR>
+nn <Leader>h :Pick help<CR>
+nn <Leader>j :TSJToggle<CR>
+nn <Leader>k :Pick keymaps<CR>
+nn <Leader>m :Pick marks<CR>
+nn <Leader>r :Pick registers<CR>
+nn <Leader>s :VsnipOpen<CR>
+nn <Leader>t :Telescope treesitter<CR>
+nn <Leader>z :ZenMode<CR>
 
-nnoremap <Leader>C :Telescope commands<CR>
-nnoremap <Leader>L :Lazy<CR>
-nnoremap <Leader>T :Telescope tags<CR>
-nnoremap <Leader>d :Telescope diagnostics<CR>
-nnoremap <Leader>e :lua MiniFiles.open()<CR>
-nnoremap <Leader>f :Telescope git_files<CR>
-nnoremap <Leader>h :Telescope help_tags<CR>
-nnoremap <Leader>j :TSJToggle<CR>
-nnoremap <Leader>s :VsnipOpen<CR>
-nnoremap <Leader>t :Telescope treesitter<CR>
-nnoremap <Leader>z :ZenMode<CR>
+nn <Leader>lc :Pick lsp scope='declaration'<CR>
+nn <Leader>ld :Pick lsp scope='definition'<CR>
+nn <Leader>li :Pick lsp scope='implementation'<CR>
+nn <Leader>lr :Pick lsp scope='references'<CR>
+nn <Leader>ls :Pick lsp scope='document_symbol'<CR>
+nn <Leader>lt :Pick lsp scope='type_definition'<CR>
+nn <Leader>lw :Pick lsp scope='workspace_symbol'<CR>
+
+nn <Leader>qc :Pick list scope='change'<CR>
+nn <Leader>qj :Pick list scope='jump'<CR>
+nn <Leader>ql :Pick list scope='location'<CR>
+nn <Leader>qq :Pick list scope='quickfix'<CR>
 
 set breakindent
-set colorcolumn=81,101,121,141
+set colorcolumn=81,101,121
 set cursorline
 set incsearch
 set ruler
@@ -50,4 +65,4 @@ au BufNewFile,BufRead *.pmd setf pandoc
 
 lua require("config.lazy")
 lua require("config.lsp")
-colorscheme everforest
+colo everforest
