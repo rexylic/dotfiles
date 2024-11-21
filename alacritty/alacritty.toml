@@ -1,5 +1,5 @@
 [general]
-import = [ "~/.config/alacritty/everforest_dark.toml" ]
+import = [ "~/.config/alacritty/everforest_light.toml" ]
 
 [font]
 bold        = { family = "Pragmata", style = "Bold" }
@@ -10,7 +10,6 @@ size        = 14
 offset      = { x = -1, y = 0 }
 
 [window]
-decorations     = "Buttonless"
 dimensions      = { columns = 90, lines = 40 }
 dynamic_padding = true
 option_as_alt   = "OnlyLeft"
