@@ -11,7 +11,6 @@ return {
 		require('mini.move').setup {}
 		require('mini.notify').setup {}
 		require('mini.pick').setup {}
-		require('mini.starter').setup {}
 		require('mini.statusline').setup {}
 		require('mini.surround').setup {}
 		require('mini.tabline').setup {

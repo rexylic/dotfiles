@@ -47,7 +47,9 @@ nn <Leader>qq :Pick list scope='quickfix'<CR>
 set breakindent
 set colorcolumn=81,101,121
 set cursorline
-set incsearch
+set foldexpr=nvim_treesitter#foldexpr()
+set foldlevelstart=99
+set foldmethod=expr
 set ruler
 set scrolloff=99
 set shell=/bin/zsh\ -l
@@ -58,6 +60,7 @@ set smoothscroll
 set noswapfile
 set number
 set relativenumber
+set t_Co=256
 set tabstop=2
 set textwidth=80
 
