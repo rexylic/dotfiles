@@ -9,6 +9,7 @@ return {
 		require('mini.move').setup {}
 		require('mini.starter').setup {}
 		require('mini.statusline').setup {}
+		require('mini.surround').setup {}
 		require('mini.tabline').setup {}
 	end,
 }

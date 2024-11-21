@@ -46,6 +46,8 @@ set relativenumber
 set tabstop=2
 set textwidth=80
 
+au BufNewFile,BufRead *.pmd setf pandoc
+
 lua require("config.lazy")
 lua require("config.lsp")
 colorscheme everforest
