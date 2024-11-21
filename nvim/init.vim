@@ -1,7 +1,6 @@
 let g:mapleader = "\ "
 let g:maplocalleader = "\\"
 let g:vimtex_mappings_prefix = '<LocalLeader>'
-let g:vimtex_indent_lists = []
 let g:vimtex_quickfix_ignore_filters = ['[Ww]arning', 'hbox']
 
 nn ` <C-w>
@@ -10,13 +9,14 @@ nn _ :tabclose<CR>
 nn + :tabnew<CR>
 nn , :bn<CR>
 
-nn [t :tabp<CR>
-nn ]t :tabn<CR>
+nn [t :tabprevious<CR>
+nn ]t :tabnext<CR>
+nn [T :tabfirst<CR>
+nn ]T :tablast<CR>
 
 nn <Leader>B :Pick git_branches<CR>
 nn <Leader>C :Pick git_commits<CR>
 nn <Leader>L :Lazy<CR>
-nn <Leader>M :Mason<CR>
 nn <Leader>b :Pick buffers<CR>
 nn <Leader>c :Pick commands<CR>
 nn <Leader>d :Pick diagnostic<CR>
