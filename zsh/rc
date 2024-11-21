@@ -3,8 +3,10 @@ ALACRITTY_CONFIG=~/.config/alacritty/alacritty.toml
 export BG=$(dark-notify -e)
 if [ $BG = "dark" ]; then
 	sed -i '1' 's/light/dark/' $ALACRITTY_CONFIG
+	sed -i '1' 's/day/night/' $ALACRITTY_CONFIG
 else
 	sed -i '1' 's/dark/light/' $ALACRITTY_CONFIG
+	sed -i '1' 's/night/day/' $ALACRITTY_CONFIG
 fi
 
 autoload -U promptinit; promptinit

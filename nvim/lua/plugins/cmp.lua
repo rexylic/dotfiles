@@ -11,6 +11,7 @@ return {
 		'hrsh7th/cmp-vsnip',
 		'hrsh7th/vim-vsnip',
 	},
+	lazy = true,
 	init = function()
 			-- Set up nvim-cmp.
 		local cmp = require('cmp')

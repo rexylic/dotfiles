@@ -1,6 +1,6 @@
 let g:mapleader = "\ "
 let g:maplocalleader = "\\"
-let g:vimtex_mappings_prefix = '<localleader>'
+let g:vimtex_mappings_prefix = '<LocalLeader>'
 let g:vimtex_indent_lists = []
 let g:vimtex_quickfix_ignore_filters = ['[Ww]arning', 'hbox']
 
@@ -44,12 +44,19 @@ nn <Leader>qj :Pick list scope='jump'<CR>
 nn <Leader>ql :Pick list scope='location'<CR>
 nn <Leader>qq :Pick list scope='quickfix'<CR>
 
+if $BG[0] == 'l'
+	set bg=light
+else
+	set bg=dark
+endif
+
 set breakindent
 set colorcolumn=81,101,121
 set cursorline
 set foldexpr=nvim_treesitter#foldexpr()
 set foldlevelstart=99
 set foldmethod=expr
+set iskeyword-=_
 set ruler
 set scrolloff=99
 set shell=/bin/zsh\ -l
@@ -60,12 +67,13 @@ set smoothscroll
 set noswapfile
 set number
 set relativenumber
-set t_Co=256
 set tabstop=2
+set termguicolors
 set textwidth=80
 
 au BufNewFile,BufRead *.pmd setf pandoc
 
 lua require("config.lazy")
 lua require("config.lsp")
-colo everforest
+
+colo tokyonight

@@ -1,6 +1,7 @@
 return {
   'Julian/lean.nvim',
   event = { 'BufReadPre *.lean', 'BufNewFile *.lean' },
+	lazy = true,
   dependencies = {
     'neovim/nvim-lspconfig',
     'nvim-lua/plenary.nvim',
