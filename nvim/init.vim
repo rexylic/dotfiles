@@ -1,12 +1,16 @@
 let g:mapleader = "\ "
 let g:maplocalleader = "\\"
-let g:snipMate = { 'snippet_version': 1 }
 let g:vimtex_mappings_prefix = '<localleader>'
 let g:vimtex_indent_lists = []
 let g:vimtex_quickfix_ignore_filters = ['[Ww]arning', 'hbox']
 
 nnoremap ` <C-w>
 nnoremap = gqip
+
+nnoremap <Left>  :tabp<CR>
+nnoremap <Right> :tabn<CR>
+nnoremap <Up>    :bp<CR>
+nnoremap <Down>  :bn<CR>
 
 nnoremap ,d :Telescope lsp_definitions<CR>
 nnoremap ,r :Telescope lsp_references<CR>
@@ -23,6 +27,7 @@ nnoremap <Leader>h :Telescope help_tags<CR>
 nnoremap <Leader>j :TSJToggle<CR>
 nnoremap <Leader>s :VsnipOpen<CR>
 nnoremap <Leader>t :Telescope treesitter<CR>
+nnoremap <Leader>z :ZenMode<CR>
 
 set breakindent
 set colorcolumn=81,101,121,141
