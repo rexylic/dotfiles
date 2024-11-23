@@ -1,21 +1,30 @@
 return {
 	'hrsh7th/nvim-cmp',
 	dependencies = {
-		'hrsh7th/cmp-nvim-lsp',
 		'hrsh7th/cmp-buffer',
-		'hrsh7th/cmp-git',
-		'hrsh7th/cmp-path',
 		'hrsh7th/cmp-cmdline',
-		'hrsh7th/cmp-omni',
+		'hrsh7th/cmp-git',
+		'hrsh7th/cmp-nvim-lsp',
 		'hrsh7th/cmp-nvim-lsp-signature-help',
 		'hrsh7th/cmp-nvim-lsp-document-symbol',
+		'hrsh7th/cmp-omni',
+		'hrsh7th/cmp-path',
 		'hrsh7th/cmp-vsnip',
 		'hrsh7th/vim-vsnip',
 	},
 	lazy = true,
 	init = function()
-		-- Set up nvim-cmp.
 		local cmp = require('cmp')
+
+		local has_words_before = function()
+			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+			return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+		end
+		local feedkey = function(key, mode)
+			vim.api.nvim_feedkeys(
+				vim.api.nvim_replace_termcodes(key, true, true, true), mode, true
+			)
+		end
 
 		cmp.setup {
 			snippet = {
@@ -36,6 +45,10 @@ return {
 				['<Tab>'] = function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
+					elseif vim.fn["vsnip#available"](1) == 1 then
+						feedkey("<Plug>(vsnip-expand-or-jump)", "")
+					elseif has_words_before() then
+						cmp.complete()
 					else
 						fallback()
 					end
@@ -43,15 +56,20 @@ return {
 				['<S-Tab>'] = function(fallback)
 					if cmp.visible() then
 						cmp.select_prev_item()
+					elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+						feedkey("<Plug>(vsnip-jump-prev)", "")
 					else
 						fallback()
 					end
 				end,
 			},
 			sources = {
-				{ name = 'nvim_lsp' },
-				{ name = 'vsnip' }, -- For vsnip users.
 				{ name = 'buffer' },
+				{ name = 'nvim_lsp' },
+				{ name = 'path' },
+				{ name = 'treesitter' },
+				{ name = 'vsnip' }, -- For vsnip users.
+				{ name = 'zsh' }, 
 			}
 		}
 
