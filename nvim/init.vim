@@ -14,9 +14,6 @@ nn ]t :tabnext<CR>
 nn [T :tabfirst<CR>
 nn ]T :tablast<CR>
 
-nn <Leader>B :Pick git_branches<CR>
-nn <Leader>C :Pick git_commits<CR>
-nn <Leader>L :Lazy<CR>
 nn <Leader>b :Pick buffers<CR>
 nn <Leader>c :Pick commands<CR>
 nn <Leader>d :Pick diagnostic<CR>
@@ -26,6 +23,7 @@ nn <Leader>h :Pick help<CR>
 nn <Leader>j :TSJToggle<CR>
 nn <Leader>k :Pick keymaps<CR>
 nn <Leader>m :Pick marks<CR>
+nn <Leader>p :Lazy<CR>
 nn <Leader>r :Pick registers<CR>
 nn <Leader>s :VsnipOpen<CR>
 nn <Leader>t :Telescope treesitter<CR>
@@ -67,6 +65,7 @@ set smoothscroll
 set noswapfile
 set number
 set relativenumber
+set t_Co=256
 set tabstop=2
 set termguicolors
 set textwidth=80
@@ -76,4 +75,4 @@ au BufNewFile,BufRead *.pmd setf pandoc
 lua require("config.lazy")
 lua require("config.lsp")
 
-colo tokyonight
+colo everforest

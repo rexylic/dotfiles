@@ -7,6 +7,7 @@ github-copilot
 helix/runtime
 iterm2
 micro
+nvim/lazy-lock.json
 zed/conversations
 zed/embeddings
 zed/prompts
