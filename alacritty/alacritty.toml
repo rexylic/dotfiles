@@ -1,5 +1,5 @@
 [general]
-import = [ "~/.config/alacritty/everforest_dark.toml" ]
+import = [ "~/.config/alacritty/everforest_light.toml" ]
 
 [font]
 bold        = { family = "Pragmata", style = "Bold" }
