@@ -1,26 +1,26 @@
 return {
 	'hrsh7th/nvim-cmp',
 	dependencies = {
-		'neovim/nvim-lspconfig',
 		'hrsh7th/cmp-nvim-lsp',
 		'hrsh7th/cmp-buffer',
 		'hrsh7th/cmp-git',
 		'hrsh7th/cmp-path',
 		'hrsh7th/cmp-cmdline',
-		'hrsh7th/nvim-cmp',
+		'hrsh7th/cmp-omni',
+		'hrsh7th/cmp-nvim-lsp-signature-help',
+		'hrsh7th/cmp-nvim-lsp-document-symbol',
 		'hrsh7th/cmp-vsnip',
 		'hrsh7th/vim-vsnip',
 	},
 	lazy = true,
 	init = function()
-			-- Set up nvim-cmp.
+		-- Set up nvim-cmp.
 		local cmp = require('cmp')
 
 		cmp.setup {
 			snippet = {
 				expand = function(args)
 					vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-					-- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
 				end,
 			},
 			window = {
@@ -32,7 +32,7 @@ return {
 				['<C-f>'] = cmp.mapping.scroll_docs(4),
 				['<C-Space>'] = cmp.mapping.complete(),
 				['<C-e>'] = cmp.mapping.abort(),
-				['<CR>'] = cmp.mapping.confirm { select = false }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+				['<CR>'] = cmp.mapping.confirm { select = false }, 
 				['<Tab>'] = function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
@@ -48,22 +48,21 @@ return {
 					end
 				end,
 			},
-			sources = cmp.config.sources({
+			sources = {
 				{ name = 'nvim_lsp' },
 				{ name = 'vsnip' }, -- For vsnip users.
-			}, {
 				{ name = 'buffer' },
-			})
+			}
 		}
 
 		-- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
 		-- Set configuration for specific filetype.
 		cmp.setup.filetype('gitcommit', {
-			sources = cmp.config.sources {
+			sources = cmp.config.sources({
 				{ name = 'git' },
 			}, {
 				{ name = 'buffer' },
-			}
+			})
 		})
 		require("cmp_git").setup()
 

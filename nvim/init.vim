@@ -25,7 +25,7 @@ nn <Leader>k :Pick keymaps<CR>
 nn <Leader>m :Pick marks<CR>
 nn <Leader>p :Lazy<CR>
 nn <Leader>r :Pick registers<CR>
-nn <Leader>s :VsnipOpen<CR>
+nn <Leader>s :VsnipOpen -format snipmate<CR>
 nn <Leader>t :Telescope treesitter<CR>
 nn <Leader>z :ZenMode<CR>
 
