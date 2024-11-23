@@ -9,38 +9,33 @@ nn _ :tabclose<CR>
 nn + :tabnew<CR>
 nn , :bn<CR>
 
-nn [t :tabprevious<CR>
-nn ]t :tabnext<CR>
-nn [T :tabfirst<CR>
-nn ]T :tablast<CR>
+" nn <Leader>b :Pick buffers<CR>
+" nn <Leader>c :Pick commands<CR>
+" nn <Leader>d :Pick diagnostic<CR>
+" nn <Leader>e :lua MiniFiles.open()<CR>
+" nn <Leader>f :Pick files<CR>
+" nn <Leader>h :Pick help<CR>
+" nn <Leader>j :TSJToggle<CR>
+" nn <Leader>k :Pick keymaps<CR>
+" nn <Leader>m :Pick marks<CR>
+" nn <Leader>p :Lazy<CR>
+" nn <Leader>r :Pick registers<CR>
+" nn <Leader>s :VsnipOpenEdit -format snipmate<CR>
+" nn <Leader>t :Telescope treesitter<CR>
+" nn <Leader>z :ZenMode<CR>
+"
+" nn <Leader>lc :Pick lsp scope='declaration'<CR>
+" nn <Leader>ld :Pick lsp scope='definition'<CR>
+" nn <Leader>li :Pick lsp scope='implementation'<CR>
+" nn <Leader>lr :Pick lsp scope='references'<CR>
+" nn <Leader>ls :Pick lsp scope='document_symbol'<CR>
+" nn <Leader>lt :Pick lsp scope='type_definition'<CR>
+" nn <Leader>lw :Pick lsp scope='workspace_symbol'<CR>
 
-nn <Leader>b :Pick buffers<CR>
-nn <Leader>c :Pick commands<CR>
-nn <Leader>d :Pick diagnostic<CR>
-nn <Leader>e :lua MiniFiles.open()<CR>
-nn <Leader>f :Pick files<CR>
-nn <Leader>h :Pick help<CR>
-nn <Leader>j :TSJToggle<CR>
-nn <Leader>k :Pick keymaps<CR>
-nn <Leader>m :Pick marks<CR>
-nn <Leader>p :Lazy<CR>
-nn <Leader>r :Pick registers<CR>
-nn <Leader>s :VsnipOpen -format snipmate<CR>
-nn <Leader>t :Telescope treesitter<CR>
-nn <Leader>z :ZenMode<CR>
-
-nn <Leader>lc :Pick lsp scope='declaration'<CR>
-nn <Leader>ld :Pick lsp scope='definition'<CR>
-nn <Leader>li :Pick lsp scope='implementation'<CR>
-nn <Leader>lr :Pick lsp scope='references'<CR>
-nn <Leader>ls :Pick lsp scope='document_symbol'<CR>
-nn <Leader>lt :Pick lsp scope='type_definition'<CR>
-nn <Leader>lw :Pick lsp scope='workspace_symbol'<CR>
-
-nn <Leader>qc :Pick list scope='change'<CR>
-nn <Leader>qj :Pick list scope='jump'<CR>
-nn <Leader>ql :Pick list scope='location'<CR>
-nn <Leader>qq :Pick list scope='quickfix'<CR>
+" nn <Leader>qc :Pick list scope='change'<CR>
+" nn <Leader>qj :Pick list scope='jump'<CR>
+" nn <Leader>ql :Pick list scope='location'<CR>
+" nn <Leader>qq :Pick list scope='quickfix'<CR>
 
 if $BG[0] == 'l'
 	set bg=light
@@ -74,5 +69,6 @@ au BufNewFile,BufRead *.pmd setf pandoc
 
 lua require("config.lazy")
 lua require("config.lsp")
+lua require("config.clues")
 
 colo everforest
