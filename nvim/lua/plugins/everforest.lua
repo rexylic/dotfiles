@@ -5,7 +5,6 @@ return {
 	priority = 1000,
 	init = function()
 		require('everforest').setup {
-			italics = true,
 			diagnostic_text_highlight = true,
 			diagnostic_line_highlight = true,
 			inlay_hints_background = "dimmed",
