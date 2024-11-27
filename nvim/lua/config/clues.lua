@@ -8,7 +8,7 @@ local nmap_leader = function(suffix, rhs, desc)
 end
 
 nmap_leader('b',  "Pick buffers",                      'Buffers')
-nmap_leader('c',  "Pick commands",                     'Buffers')
+nmap_leader('c',  "Pick commands",                     'Commands')
 nmap_leader('d',  "Pick diagnostic",                   'Diagnostic')
 nmap_leader('e',  'lua MiniFiles.open()',              'Explorer')
 nmap_leader('f',  "Pick files",                        'Files')

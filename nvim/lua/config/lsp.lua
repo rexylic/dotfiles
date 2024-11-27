@@ -27,6 +27,12 @@ lc.eslint.setup {
 lc.leanls.setup {
 	capabilities = capabilities,
 }
+lc.lua_ls.setup {
+	capabilities = capabilities,
+}
+lc.pyright.setup {
+	capabilities = capabilities,
+}
 lc.sourcekit.setup {
 	capabilities = capabilities,
 }

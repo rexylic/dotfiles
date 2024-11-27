@@ -1,3 +1,3 @@
 return {
-	'rexylic/papercolor'
+	'NLKNguyen/papercolor-theme'
 }
