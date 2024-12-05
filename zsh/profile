@@ -45,7 +45,7 @@ function gac {
 function pch {
 	pandoc $1 -o $2\
 	 	-f markdown+header_attributes+footnotes\
-		-t html --template ~/Code/web/personal/archive/template.html\
+		-t html --template ~/Code/website/archive/template.html\
 		--no-highlight --mathjax
 	tidy --indent-spaces 4 -i -q -o $2 $2
 }

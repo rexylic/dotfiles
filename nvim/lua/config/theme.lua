@@ -15,14 +15,14 @@
 
 if os.getenv("BG"):sub(1, 1) == 'l' then
 	require('mini.hues').setup {
-		background = "#eeeeee",
-		foreground = "#156b56",
-		saturation = 'mediumhigh',
+		background = "#f9f9f9",
+		foreground = "#101010",
+		n_hues = 8,
 	}
 else
 	require('mini.hues').setup {
-		background = "#1c1c1c",
-		foreground = "#61b8a3",
-		saturation = 'mediumhigh',
+		background = "#15191e",
+		foreground = "#dbdbdb",
+		n_hues = 8,
 	}
 end

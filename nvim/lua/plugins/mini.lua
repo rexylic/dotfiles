@@ -7,7 +7,7 @@ return {
 		require('mini.files').setup {}
 		require('mini.indentscope').setup {}
 		require('mini.icons').setup {
-			style = 'ascii',
+			-- style = 'ascii',
 		}
 		require('mini.jump2d').setup {}
 		require('mini.move').setup {}
