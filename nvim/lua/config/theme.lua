@@ -1,6 +1,6 @@
-local light_fg = "#000000"
+local light_fg = "#125c4a"
 local light_bg = "#feffff"
-local dark_fg = "#d9dee8"
+local dark_fg = "#78c2b0"
 local dark_bg = "#312e30"
 
 local l = os.getenv("BG"):sub(1, 1)
@@ -9,15 +9,15 @@ local l = os.getenv("BG"):sub(1, 1)
 -- local light_palette = minibase16.mini_palette(
 --   light_bg,
 -- 	light_fg,
--- 	70
+-- 	85
 -- )
 -- local dark_palette = minibase16.mini_palette(
 -- 	dark_bg,
 -- 	dark_fg,
--- 	61
+-- 	85
 -- )
 -- require('mini.base16').setup {
--- 	palette = os.getenv("BG"):sub(1, 1) == 'l' and light_palette or dark_palette
+-- 	palette = l == 'l' and light_palette or dark_palette
 -- }
 
 if l == 'l' then

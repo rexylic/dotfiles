@@ -2,6 +2,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 if type brew &>/dev/null; then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
   autoload -Uz compinit; compinit
+	zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 fi
 
 source <(fzf --zsh)
@@ -33,6 +34,7 @@ alias gsm="git submodule"
 alias gsmurr="git submodule update --recursive --remote"
 alias grs="git restore --staged"
 
+alias of='open $(fzf)'
 alias nlp="cp ~/Code/tex/archive/* ."
 alias nv="nvim"
 alias pyv="python3 -m venv ~/Code/py/; source ~/Code/py/bin/activate"

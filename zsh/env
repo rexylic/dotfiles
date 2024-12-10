@@ -1,5 +1,5 @@
 PS1="%1~ %# "
-EDITOR=nvim
+EDITOR=vi
 VISUAL=micro
 PAGER=less
 ALACRITTY_CONFIG=~/.config/alacritty/alacritty.toml
