@@ -15,8 +15,8 @@ alias bis="brew install"
 alias bisc="brew install --cask"
 alias bl="brew list"
 alias bs="brew search"
-alias bu="brew update && brew upgrade"
-alias bui="brew uninstall"
+alias bun="brew uninstall"
+alias buu="brew update && brew upgrade"
 
 alias ga="git add"
 alias gb="git branch"
@@ -35,13 +35,16 @@ alias gsmurr="git submodule update --recursive --remote"
 alias grs="git restore --staged"
 
 alias of='open $(fzf)'
-alias nlp="cp ~/Code/tex/archive/* ."
-alias nv="nvim"
 alias pyv="python3 -m venv ~/Code/py/; source ~/Code/py/bin/activate"
 
 function gac {
-  git add $1
-  git commit -m $2
+ 	git add $1
+ 	git commit -m $2
+}
+
+function nlp {
+	cp ~/Code/tex/archive/* .
+	mv main.tex "$1.tex"
 }
 
 function pch {

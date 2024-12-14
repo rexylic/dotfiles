@@ -1,6 +1,7 @@
 **.swp
 **.*1
 cabal
+fontforge
 gh
 ghc
 github-copilot

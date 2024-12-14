@@ -1,6 +1,5 @@
-export BG=$(dark-notify -e)
-
 # ALACRITTY_CONFIG=~/.config/alacritty/alacritty.toml
+# export BG=$(dark-notify -e)
 # if [ $BG = "dark" ]; then
 # 	sed -i '1' 's/light/dark/' $ALACRITTY_CONFIG
 # else
