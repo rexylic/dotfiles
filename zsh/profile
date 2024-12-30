@@ -49,9 +49,15 @@ function nlp {
 
 function pch {
 	pandoc $1 -o $2\
-	 	-f markdown+header_attributes+footnotes\
+	 	-f markdown\
 		-t html --template ~/Code/website/archive/template.html\
 		--no-highlight --mathjax
 	tidy --indent-spaces 4 -i -q -o $2 $2
+}
+
+function pch-crypt {
+	pandoc ~/Code/crypt/crypt.md -o ~/Code/crypt/index.html\
+		--template ~/Code/crypt/template\
+	 	-f markdown -t html --no-highlight
 }
 
