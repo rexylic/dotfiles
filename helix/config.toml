@@ -1,22 +1,22 @@
-theme = "papercolor-light"
+theme = "papercolor-dark"
 
 [editor]
-scrolloff = 9
-line-number = "relative"
-true-color = true
-undercurl = true
-rulers = [81, 101, 121]
-bufferline = "multiple"
-color-modes = true
+scrolloff    = 9
+line-number  = "relative"
+true-color   = true
+undercurl    = true
+rulers       = [81, 101, 121]
+bufferline   = "multiple"
+color-modes  = true
 popup-border = "all"
 
 [editor.statusline]
-left = ["version-control", "spinner", "workspace-diagnostics"]
-center = ["file-name", "file-modification-indicator"]
-right = ["position", "total-line-numbers"]
-mode.normal = "N"
-mode.insert = "I"
-mode.select = "S"
+left   = ["file-name", "file-modification-indicator"]
+center = ["workspace-diagnostics", "spinner"]
+right  = ["position", "total-line-numbers"]
+
+[editor.soft-wrap]
+enable = true
 
 [editor.lsp]
 display-messages = true
@@ -29,16 +29,16 @@ select = "underline"
 focus-lost = true
 
 [editor.indent-guides]
-render = true
+render    = true
 character = "┆"
 
 [keys.normal]
-"r" = "replace_with_yanked"
-"R" = "replace"
-"X" = "extend_line_above"
-"`" = "switch_to_lowercase"
-"~" = "switch_to_uppercase"
-"left" = "jump_view_left"
+"r"     = "replace_with_yanked"
+"R"     = "replace"
+"X"     = "extend_line_above"
+"`"     = "switch_to_lowercase"
+"~"     = "switch_to_uppercase"
+"left"  = "jump_view_left"
 "right" = "jump_view_right"
-"up" = "jump_view_up"
-"down" = "jump_view_down"
+"up"    = "jump_view_up"
+"down"  = "jump_view_down"
