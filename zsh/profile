@@ -10,54 +10,18 @@ source <(fzf --zsh)
 
 export FZF_DEFAULT_COMMAND='fd -I --type f'
 
-alias bi="brew info"
-alias bis="brew install"
-alias bisc="brew install --cask"
-alias bl="brew list"
-alias bs="brew search"
-alias bun="brew uninstall"
-alias buu="brew update && brew upgrade"
-
-alias ga="git add"
-alias gb="git branch"
-alias gcl="git clone"
-alias gcm="git commit -m"
-alias gco="git checkout"
-alias gd="git diff"
-alias gl="git log"
-alias gm="git merge"
-alias gr="git restore"
-alias gpl="git pull"
-alias gps="git push"
-alias gst="git status"
-alias gsm="git submodule"
-alias gsmurr="git submodule update --recursive --remote"
-alias grs="git restore --staged"
-
-alias of='open $(fzf)'
 alias pyv="python3 -m venv ~/Code/py/; source ~/Code/py/bin/activate"
 
 function gac {
- 	git add $1
- 	git commit -m $2
+ 	git a $1
+ 	git c $2
 }
 
 function nlp {
-	cp ~/Code/tex/archive/* .
+	cp ~/Math/tex/archive/* .
 	mv main.tex "$1.tex"
 }
 
-function pch {
-	pandoc $1 -o $2\
-	 	-f markdown\
-		-t html --template ~/Code/website/archive/template.html\
-		--no-highlight --mathjax
-	tidy --indent-spaces 4 -i -q -o $2 $2
+function vi {
+	echo "Hey! You're supposed to learn Helix :/ Don't use vim please!"
 }
-
-function pch-crypt {
-	pandoc ~/Code/crypt/crypt.md -o ~/Code/crypt/index.html\
-		--template ~/Code/crypt/template\
-	 	-f markdown -t html --no-highlight
-}
-
