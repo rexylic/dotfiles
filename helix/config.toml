@@ -1,44 +1,8 @@
-theme = "papercolor-dark"
+theme = "gruvbox"
 
-[editor]
-scrolloff    = 9
-line-number  = "relative"
-true-color   = true
-undercurl    = true
-rulers       = [81, 101, 121]
-bufferline   = "multiple"
-color-modes  = true
-popup-border = "all"
-
-[editor.statusline]
-left   = ["file-name", "file-modification-indicator"]
-center = ["workspace-diagnostics", "spinner"]
-right  = ["position", "total-line-numbers"]
+[editor.file-picker]
+git-ignore = false
 
 [editor.soft-wrap]
 enable = true
 
-[editor.lsp]
-display-messages = true
-
-[editor.cursor-shape]
-insert = "bar"
-select = "underline"
-
-[editor.auto-save]
-focus-lost = true
-
-[editor.indent-guides]
-render    = true
-character = "┆"
-
-[keys.normal]
-"r"     = "replace_with_yanked"
-"R"     = "replace"
-"X"     = "extend_line_above"
-"`"     = "switch_to_lowercase"
-"~"     = "switch_to_uppercase"
-"left"  = "jump_view_left"
-"right" = "jump_view_right"
-"up"    = "jump_view_up"
-"down"  = "jump_view_down"
