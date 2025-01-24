@@ -1,8 +1,13 @@
 theme = "gruvbox"
 
+[editor]
+line-number = "relative"
+true-color = true
+bufferline = "multiple"
+color-modes = true
+
 [editor.file-picker]
 git-ignore = false
 
 [editor.soft-wrap]
 enable = true
-

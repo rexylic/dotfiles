@@ -1,6 +1,13 @@
 PS1="%1~ %# "
-EDITOR=vi
+
+EDITOR=hx
 VISUAL=micro
 PAGER=less
-ALACRITTY_CONFIG=~/.config/alacritty/alacritty.toml
+
+PURE_PROMPT_SYMBOL=">"
+PURE_PROMPT_VICMD_SYMBOL="<"
+PURE_GIT_DOWN_ARROW="pull"
+PURE_GIT_UP_ARROW="push"
+PURE_GIT_STASH_SYMBOL="stash"
+
 . "$HOME/.cargo/env"
