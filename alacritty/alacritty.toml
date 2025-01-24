@@ -2,14 +2,14 @@
 import = [ "~/.config/alacritty/gruvbox_dark.toml" ]
 
 [font]
-normal      = { family = "Menlo", style = "Regular" }
-italic      = { family = "Menlo", style = "Italic" }
-bold        = { family = "Menlo", style = "Bold" }
-bold_italic = { family = "Menlo", style = "Bold Italic" }
-size        = 13
+normal      = { family = "Pragmata", style = "Regular" }
+italic      = { family = "Pragmata", style = "Italic" }
+bold        = { family = "Pragmata", style = "Bold" }
+bold_italic = { family = "Pragmata", style = "Bold Italic" }
+size        = 14
 
 [window]
-dimensions      = { columns = 90, lines = 50 }
+dimensions      = { columns = 90, lines = 40 }
 dynamic_padding = true
 option_as_alt   = "OnlyLeft"
 padding         = { x = 16, y = 16 }
