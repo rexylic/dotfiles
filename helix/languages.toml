@@ -1,0 +1,39 @@
+[[language]]
+name = "markdown"
+language-servers = ["marksman", "ltex-ls-plus"]
+
+[[language]]
+name = "latex"
+language-servers = ["texlab", "ltex-ls-plus"]
+
+[language-server.ltex-ls-plus]
+command = "ltex-ls-plus"
+
+[language-server.ltex-ls-plus.config.ltex]
+language = "en-CA"
+
+[language-server.texlab]
+command = "texlab"
+
+[language-server.texlab.config.texlab]
+diagnosticsDelay = 500
+
+[language-server.texlab.config.texlab.build]
+executable = "tectonic"
+args = ["-X", "compile", "%f", "--synctex"]
+onSave = true
+forwardSearchAfter = true
+
+[language-server.texlab.config.texlab.chktex]
+onOpenAndSave = true
+onEdit = true
+
+[language-server.texlab.config.texlab.diagnostics]
+ignoredPatterns = [
+  "overfull",
+  "instead of",
+]
+
+[language-server.texlab.config.texlab.forwardSearch]
+executable = "/Applications/Skim.app/Contents/SharedSupport/displayline"
+args = ["-r", "%l", "%p", "%f"]
