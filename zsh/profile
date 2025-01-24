@@ -18,7 +18,7 @@ function gac {
 }
 
 function nlp {
-	cp ~/Math/tex/archive/* .
+	cp ~/Code/tex/archive/* .
 	mv main.tex "$1.tex"
 }
 
