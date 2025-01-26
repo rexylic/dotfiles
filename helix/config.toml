@@ -5,6 +5,7 @@ line-number = "relative"
 true-color = true
 bufferline = "multiple"
 color-modes = true
+scrolloff = 99
 
 [editor.file-picker]
 git-ignore = false

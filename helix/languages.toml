@@ -1,10 +1,14 @@
 [[language]]
 name = "markdown"
-language-servers = ["marksman", "ltex-ls-plus"]
+language-servers = ["marksman"]
 
 [[language]]
 name = "latex"
 language-servers = ["texlab", "ltex-ls-plus"]
+
+[[language]]
+name = "html"
+auto-format = false
 
 [language-server.ltex-ls-plus]
 command = "ltex-ls-plus"

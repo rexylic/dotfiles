@@ -25,3 +25,7 @@ function nlp {
 function vi {
 	echo "Hey! You're supposed to learn Helix :/ Don't use vim please!"
 }
+
+function vim {
+	echo "Hey! You're supposed to learn Helix :/ Don't use vim please!"
+}
