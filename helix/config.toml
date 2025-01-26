@@ -12,3 +12,6 @@ git-ignore = false
 
 [editor.soft-wrap]
 enable = true
+
+[keys.normal]
+X = "extend_line_above"
