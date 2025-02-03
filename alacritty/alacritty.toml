@@ -1,5 +1,5 @@
 [general]
-import = [ "~/.config/alacritty-theme/themes/dark_plus.toml" ]
+import = [ "~/.config/alacritty-theme/themes/one_dark.toml" ]
 
 [font]
 normal      = { family = "Pragmata", style = "Regular" }
