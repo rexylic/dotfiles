@@ -12,7 +12,7 @@ export FZF_DEFAULT_COMMAND='fd -I --type f'
 
 alias pyv="python3 -m venv ~/Code/py/; source ~/Code/py/bin/activate"
 
-function gac {
+function g {
  	git a $1
  	git c $2
 }

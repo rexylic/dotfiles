@@ -1,8 +1,9 @@
 PS1="%1~ %# "
 
-EDITOR=hx
-VISUAL=micro
-PAGER=less
+export EDITOR=hx
+export VISUAL=hx
+export PAGER=moar
+export MANPAGER=moar
 
 PURE_PROMPT_SYMBOL=">"
 PURE_PROMPT_VICMD_SYMBOL="<"

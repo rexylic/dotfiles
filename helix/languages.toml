@@ -22,9 +22,15 @@ command = "texlab"
 [language-server.texlab.config.texlab]
 diagnosticsDelay = 500
 
+# [language-server.texlab.config.texlab.build]
+# executable = "tectonic"
+# args = ["-X", "compile", "%f", "--synctex"]
+# onSave = true
+# forwardSearchAfter = true
+
 [language-server.texlab.config.texlab.build]
-executable = "tectonic"
-args = ["-X", "compile", "%f", "--synctex"]
+executable = "latexmk"
+args = ["-pdf", "-interaction=nonstopmode", "-synctex=1", "%f"]
 onSave = true
 forwardSearchAfter = true
 
