@@ -1,12 +1,24 @@
 [general]
-import = [ "~/.config/alacritty-theme/themes/one_dark.toml" ]
+import = [ "~/.config/alacritty-theme/themes/papercolor_light.toml" ]
 
 [font]
-normal      = { family = "Pragmata", style = "Regular" }
-italic      = { family = "Pragmata", style = "Italic" }
-bold        = { family = "Pragmata", style = "Bold" }
-bold_italic = { family = "Pragmata", style = "Bold Italic" }
-size        = 14
+size = 15
+
+[font.normal]
+family = "Pragmata"
+style = "Regular"
+
+[font.italic]
+family = "Pragmata"
+style = "Italic"
+
+[font.bold]
+family = "Pragmata"
+style = "Bold"
+
+[font.bold_italic]
+family = "Pragmata"
+style = "Bold Italic"
 
 [window]
 dimensions      = { columns = 90, lines = 40 }

@@ -8,10 +8,6 @@ fi
 source <(fzf --zsh)
 . "$HOME/.cargo/env"
 
-export FZF_DEFAULT_COMMAND='fd -I --type f'
-
-alias pyv="python3 -m venv ~/Code/py/; source ~/Code/py/bin/activate"
-
 function g {
  	git a $1
  	git c $2
@@ -22,10 +18,7 @@ function nlp {
 	mv main.tex "$1.tex"
 }
 
-function vi {
-	echo "Hey! You're supposed to learn Helix :/ Don't use vim please!"
-}
-
-function vim {
-	echo "Hey! You're supposed to learn Helix :/ Don't use vim please!"
+function pyv {
+	python3 -m venv ~/Code/py/
+	source ~/Code/py/bin/activate
 }

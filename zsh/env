@@ -4,6 +4,7 @@ export EDITOR=hx
 export VISUAL=hx
 export PAGER=moar
 export MANPAGER=moar
+export FZF_DEFAULT_COMMAND='fd -I --type f'
 
 PURE_PROMPT_SYMBOL=">"
 PURE_PROMPT_VICMD_SYMBOL="<"

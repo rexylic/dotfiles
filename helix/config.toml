@@ -1,11 +1,12 @@
-theme = "onedark"
+theme = "papercolor-light"
 
 [editor]
+auto-pairs = false
 line-number = "relative"
 true-color = true
 bufferline = "multiple"
 color-modes = true
-scrolloff = 99
+rulers = [81, 101]
 
 [editor.file-picker]
 git-ignore = false
