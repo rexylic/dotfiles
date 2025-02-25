@@ -4,6 +4,8 @@ export EDITOR=hx
 export VISUAL=hx
 export PAGER=moar
 export MANPAGER=moar
+export TERM=alacritty
+export COLORTERM=truecolor
 export FZF_DEFAULT_COMMAND='fd -I --type f'
 
 PURE_PROMPT_SYMBOL=">"
