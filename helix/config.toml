@@ -1,18 +1,13 @@
-theme = "papercolor-light"
+theme = "onedark"
 
 [editor]
 auto-pairs = false
 line-number = "relative"
 true-color = true
 bufferline = "multiple"
-color-modes = true
-rulers = [81, 101]
 
 [editor.file-picker]
 git-ignore = false
 
 [editor.soft-wrap]
 enable = true
-
-[keys.normal]
-X = "extend_line_above"

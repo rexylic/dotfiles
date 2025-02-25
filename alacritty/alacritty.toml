@@ -1,8 +1,8 @@
 [general]
-import = [ "~/.config/alacritty-theme/themes/papercolor_light.toml" ]
+import = [ "~/.config/alacritty-theme/themes/one_dark.toml" ]
 
 [font]
-size = 15
+size = 14
 
 [font.normal]
 family = "Pragmata"
