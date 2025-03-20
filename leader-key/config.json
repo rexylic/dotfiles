@@ -1,0 +1,154 @@
+{
+  "actions" : [
+    {
+      "key" : "a",
+      "label" : "",
+      "type" : "application",
+      "value" : "/Applications/Alacritty.app"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "v",
+          "label" : "VSC",
+          "type" : "application",
+          "value" : "/Applications/Visual Studio Code.app"
+        },
+        {
+          "key" : "x",
+          "label" : "",
+          "type" : "application",
+          "value" : "/Applications/Xcode.app"
+        },
+        {
+          "key" : "p",
+          "label" : "",
+          "type" : "application",
+          "value" : "/Applications/PyCharm.app"
+        },
+        {
+          "key" : "r",
+          "label" : "",
+          "type" : "application",
+          "value" : "/Applications/RustRover.app"
+        },
+        {
+          "key" : "c",
+          "label" : "",
+          "type" : "application",
+          "value" : "/Applications/CLion.app"
+        }
+      ],
+      "key" : "c",
+      "label" : "Code",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "y",
+          "label" : "YouTube",
+          "type" : "url",
+          "value" : "https://youtube.com"
+        },
+        {
+          "key" : "r",
+          "label" : "Reddit",
+          "type" : "url",
+          "value" : "https://reddit.com"
+        },
+        {
+          "key" : "n",
+          "label" : "News",
+          "type" : "url",
+          "value" : "https://ground.news"
+        },
+        {
+          "key" : "a",
+          "label" : "",
+          "type" : "application",
+          "value" : "/Applications/Arc.app"
+        },
+        {
+          "key" : "c",
+          "label" : "",
+          "type" : "application",
+          "value" : "/Applications/ChatGPT.app"
+        },
+        {
+          "actions" : [
+            {
+              "key" : "c",
+              "label" : "CN",
+              "type" : "url",
+              "value" : "https://scp-wiki-cn.wikidot.com"
+            },
+            {
+              "key" : "e",
+              "label" : "EN",
+              "type" : "url",
+              "value" : "https://scp-wiki.wikidot.com"
+            }
+          ],
+          "key" : "s",
+          "label" : "SCP",
+          "type" : "group"
+        },
+        {
+          "key" : "k",
+          "label" : "Kindle",
+          "type" : "url",
+          "value" : "https://www.amazon.ca/sendtokindle"
+        }
+      ],
+      "key" : "b",
+      "label" : "Browse",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "d",
+          "label" : "Design",
+          "type" : "folder",
+          "value" : "/Users/fh2ctm/Desktop/designs"
+        },
+        {
+          "key" : "m",
+          "label" : "Math",
+          "type" : "folder",
+          "value" : "/Users/fh2ctm/Documents/math"
+        },
+        {
+          "key" : "g",
+          "label" : "Gov",
+          "type" : "folder",
+          "value" : "/Users/fh2ctm/Library/Mobile Documents/com~apple~CloudDocs/Documents/gov"
+        }
+      ],
+      "key" : "d",
+      "label" : "Document",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "w",
+          "label" : null,
+          "type" : "application",
+          "value" : "/Applications/WeChat.app"
+        },
+        {
+          "key" : "d",
+          "label" : null,
+          "type" : "application",
+          "value" : "/Applications/Discord.app"
+        }
+      ],
+      "key" : "s",
+      "label" : "Social",
+      "type" : "group"
+    }
+  ],
+  "type" : "group"
+}

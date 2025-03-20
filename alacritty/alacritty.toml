@@ -1,5 +1,5 @@
 [general]
-import = [ "~/.config/alacritty-theme/themes/one_dark.toml" ]
+import = [ "~/.config/alacritty-theme/themes/one_light.toml" ]
 
 [font]
 size = 14
@@ -21,7 +21,12 @@ family = "Pragmata"
 style = "Bold Italic"
 
 [window]
-dimensions      = { columns = 90, lines = 40 }
+dimensions = { columns = 80, lines = 30 }
 dynamic_padding = true
-option_as_alt   = "OnlyLeft"
-padding         = { x = 16, y = 16 }
+option_as_alt = "OnlyLeft"
+padding = { x = 16, y = 16 }
+
+[[keyboard.bindings]]
+mods = "Command"
+key = "N"
+action = "SpawnNewInstance"

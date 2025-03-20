@@ -1,10 +1,11 @@
 theme = "onedark"
 
 [editor]
-auto-pairs = false
 line-number = "relative"
 true-color = true
 bufferline = "multiple"
+color-modes = true
+rulers = [80, 100, 120]
 
 [editor.file-picker]
 git-ignore = false

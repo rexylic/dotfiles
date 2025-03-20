@@ -12,13 +12,3 @@ function g {
  	git a $1
  	git c $2
 }
-
-function nlp {
-	cp ~/Code/tex/archive/* .
-	mv main.tex "$1.tex"
-}
-
-function pyv {
-	python3 -m venv ~/Code/py/
-	source ~/Code/py/bin/activate
-}

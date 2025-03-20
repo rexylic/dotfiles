@@ -1,12 +1,12 @@
 PS1="%1~ %# "
 
-export EDITOR=hx
-export VISUAL=hx
-export PAGER=moar
-export MANPAGER=moar
-export TERM=alacritty
+export EDITOR=micro
+export VISUAL=micro
+export PAGER='moar --no-linenumbers'
+export MANPAGER='moar --no-linenumbers'
 export COLORTERM=truecolor
 export FZF_DEFAULT_COMMAND='fd -I --type f'
+export TYPST_DIR='~/Library/Application\ Support/typst'
 
 PURE_PROMPT_SYMBOL=">"
 PURE_PROMPT_VICMD_SYMBOL="<"

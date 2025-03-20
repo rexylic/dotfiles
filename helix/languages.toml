@@ -45,10 +45,10 @@ args = ["-r", "%l", "%p", "%f"]
 command = "tinymist"
 
 [language-server.tinymist.config]
-exportPdf = "onSave"
+exportPdf = "onDocumentHasTitle"
 formatterMode = "typstyle"
 formatterPrintWidth = 120
-completion.triggerOnSnippetPlaceholders = true
+completion.triggerOnSnippetPlaceholders = false
 
 [[language]]
 name = "typst"
