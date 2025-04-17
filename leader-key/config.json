@@ -1,49 +1,6 @@
 {
   "actions" : [
     {
-      "key" : "a",
-      "label" : "",
-      "type" : "application",
-      "value" : "/Applications/Alacritty.app"
-    },
-    {
-      "actions" : [
-        {
-          "key" : "v",
-          "label" : "VSC",
-          "type" : "application",
-          "value" : "/Applications/Visual Studio Code.app"
-        },
-        {
-          "key" : "x",
-          "label" : "",
-          "type" : "application",
-          "value" : "/Applications/Xcode.app"
-        },
-        {
-          "key" : "p",
-          "label" : "",
-          "type" : "application",
-          "value" : "/Applications/PyCharm.app"
-        },
-        {
-          "key" : "r",
-          "label" : "",
-          "type" : "application",
-          "value" : "/Applications/RustRover.app"
-        },
-        {
-          "key" : "c",
-          "label" : "",
-          "type" : "application",
-          "value" : "/Applications/CLion.app"
-        }
-      ],
-      "key" : "c",
-      "label" : "Code",
-      "type" : "group"
-    },
-    {
       "actions" : [
         {
           "key" : "y",
@@ -62,18 +19,6 @@
           "label" : "News",
           "type" : "url",
           "value" : "https://ground.news"
-        },
-        {
-          "key" : "a",
-          "label" : "",
-          "type" : "application",
-          "value" : "/Applications/Arc.app"
-        },
-        {
-          "key" : "c",
-          "label" : "",
-          "type" : "application",
-          "value" : "/Applications/ChatGPT.app"
         },
         {
           "actions" : [
@@ -99,6 +44,18 @@
           "label" : "Kindle",
           "type" : "url",
           "value" : "https://www.amazon.ca/sendtokindle"
+        },
+        {
+          "key" : "g",
+          "label" : "GitHub",
+          "type" : "url",
+          "value" : "https://github.com"
+        },
+        {
+          "key" : "t",
+          "label" : "Translate",
+          "type" : "url",
+          "value" : "https://translate.google.ca/"
         }
       ],
       "key" : "b",
@@ -108,45 +65,87 @@
     {
       "actions" : [
         {
-          "key" : "d",
-          "label" : "Design",
-          "type" : "folder",
-          "value" : "/Users/fh2ctm/Desktop/designs"
+          "key" : "t",
+          "label" : "Typst",
+          "type" : "url",
+          "value" : "https://typst.app/docs/reference/"
         },
         {
-          "key" : "m",
-          "label" : "Math",
-          "type" : "folder",
-          "value" : "/Users/fh2ctm/Documents/math"
+          "key" : "s",
+          "label" : "Sage",
+          "type" : "url",
+          "value" : "https://doc.sagemath.org/html/en/reference/index.html"
         },
         {
-          "key" : "g",
-          "label" : "Gov",
-          "type" : "folder",
-          "value" : "/Users/fh2ctm/Library/Mobile Documents/com~apple~CloudDocs/Documents/gov"
+          "key" : "p",
+          "label" : "Pandoc",
+          "type" : "url",
+          "value" : "https://pandoc.org/MANUAL.html"
+        },
+        {
+          "key" : "r",
+          "label" : "Rust",
+          "type" : "url",
+          "value" : "https://doc.rust-lang.org/std/index.html"
+        },
+        {
+          "key" : "R",
+          "label" : "Rust Book",
+          "type" : "url",
+          "value" : "https://doc.rust-lang.org/nightly/book/title-page.html"
         }
       ],
       "key" : "d",
-      "label" : "Document",
+      "label" : "Docs",
       "type" : "group"
     },
     {
       "actions" : [
         {
+          "key" : "a",
+          "label" : "",
+          "type" : "application",
+          "value" : "/Applications/Arc.app"
+        },
+        {
+          "key" : "c",
+          "label" : "",
+          "type" : "application",
+          "value" : "/Applications/ChatGPT.app"
+        },
+        {
+          "key" : "d",
+          "label" : "",
+          "type" : "application",
+          "value" : "/Applications/Discord.app"
+        },
+        {
           "key" : "w",
-          "label" : null,
+          "label" : "",
           "type" : "application",
           "value" : "/Applications/WeChat.app"
         },
         {
-          "key" : "d",
-          "label" : null,
+          "key" : "f",
+          "label" : "",
           "type" : "application",
-          "value" : "/Applications/Discord.app"
+          "value" : "/Applications/Firefox.app"
+        },
+        {
+          "key" : "p",
+          "label" : "",
+          "type" : "application",
+          "value" : "/System/Applications/Passwords.app"
+        },
+        {
+          "key" : "t",
+          "label" : "Terminal",
+          "type" : "application",
+          "value" : "/Applications/Alacritty.app"
         }
       ],
-      "key" : "s",
-      "label" : "Social",
+      "key" : "a",
+      "label" : "Apps",
       "type" : "group"
     }
   ],

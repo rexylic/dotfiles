@@ -1,26 +1,23 @@
 [[language]]
-name = "markdown"
-language-servers = ["marksman"]
+name = "html"
+auto-format = false
+
+## LaTeX
 
 [[language]]
 name = "latex"
 language-servers = ["texlab", "ltex-ls-plus"]
 
-[[language]]
-name = "html"
-auto-format = false
-
 [language-server.ltex-ls-plus]
 command = "ltex-ls-plus"
-
-[language-server.ltex-ls-plus.config.ltex]
-language = "en-CA"
+config.ltex.language = "en-CA"
 
 [language-server.texlab]
 command = "texlab"
 
 [language-server.texlab.config.texlab]
 diagnosticsDelay = 500
+diagnostics.ignoredPatterns = ["overfull", "instead of"]
 
 [language-server.texlab.config.texlab.build]
 executable = "latexmk"
@@ -31,15 +28,24 @@ onSave = true
 onOpenAndSave = true
 onEdit = true
 
-[language-server.texlab.config.texlab.diagnostics]
-ignoredPatterns = [
-  "overfull",
-  "instead of",
-]
-
 [language-server.texlab.config.texlab.forwardSearch]
 executable = "/Applications/Skim.app/Contents/SharedSupport/displayline"
 args = ["-r", "%l", "%p", "%f"]
+
+# Markdown
+
+[[language]]
+name = "markdown"
+indent = { tab-width = 4, unit = "    " }
+# formatter = { command = "dprint", args = ["fmt", "--stdin", "md"] }
+auto-format = false
+language-servers = ["marksman"]
+
+# Typst
+
+[[language]]
+name = "typst"
+language-servers = ["tinymist"]
 
 [language-server.tinymist]
 command = "tinymist"
@@ -47,9 +53,5 @@ command = "tinymist"
 [language-server.tinymist.config]
 exportPdf = "onDocumentHasTitle"
 formatterMode = "typstyle"
-formatterPrintWidth = 120
 completion.triggerOnSnippetPlaceholders = false
 
-[[language]]
-name = "typst"
-language-servers = ["tinymist"]

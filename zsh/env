@@ -1,17 +1,20 @@
 PS1="%1~ %# "
 
-export EDITOR=micro
+export EDITOR=hx
 export VISUAL=micro
-export PAGER='moar --no-linenumbers'
-export MANPAGER='moar --no-linenumbers'
+export PAGER=moar
+export MANPAGER=moar
 export COLORTERM=truecolor
 export FZF_DEFAULT_COMMAND='fd -I --type f'
-export TYPST_DIR='~/Library/Application\ Support/typst'
 
 PURE_PROMPT_SYMBOL=">"
 PURE_PROMPT_VICMD_SYMBOL="<"
 PURE_GIT_DOWN_ARROW="pull"
 PURE_GIT_UP_ARROW="push"
 PURE_GIT_STASH_SYMBOL="stash"
+
+function rg() {
+  /opt/homebrew/bin/rg -p "$@" | moar
+}
 
 . "$HOME/.cargo/env"

@@ -1,11 +1,12 @@
 ALACRITTY_CONFIG=~/.config/alacritty/alacritty.toml
+HELIX_CONFIG=~/.config/helix/config.toml
 
 export BG=$(dark-notify -e)
 if [ $BG = "dark" ]
 then
-	sed -i '1' 's/light/dark/' $ALACRITTY_CONFIG 
+	sed -i '1' 's/light/dark/' $ALACRITTY_CONFIG $HELIX_CONFIG
 else
-	sed -i '1' 's/dark/light/' $ALACRITTY_CONFIG 
+	sed -i '1' 's/dark/light/' $ALACRITTY_CONFIG $HELIX_CONFIG 
 fi
 
 unset zle_bracketed_paste
