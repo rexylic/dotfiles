@@ -1,5 +1,5 @@
 [general]
-import = [ "~/.config/alacritty-theme/themes/ayu_dark_rev.toml" ]
+import = [ "~/.config/alacritty-theme/themes/vscode.toml" ]
 
 [font]
 size = 13
