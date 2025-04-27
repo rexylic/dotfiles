@@ -2,6 +2,10 @@
 name = "html"
 auto-format = false
 
+[[language]]
+name = "go"
+indent = { tab-width = 2, unit = "\t" }
+
 ## LaTeX
 
 [[language]]
@@ -45,6 +49,7 @@ language-servers = ["marksman"]
 
 [[language]]
 name = "typst"
+indent = { tab-width = 4, unit = "    " }
 language-servers = ["tinymist"]
 
 [language-server.tinymist]

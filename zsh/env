@@ -1,5 +1,3 @@
-PS1="%1~ %# "
-
 export EDITOR=hx
 export VISUAL=micro
 export PAGER=moar
@@ -18,3 +16,4 @@ function rg() {
 }
 
 . "$HOME/.cargo/env"
+export PS1="%1~ %# "
